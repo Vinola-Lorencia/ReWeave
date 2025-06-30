@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Reweave</string>
+    <string name="title_home">Home</string>
+    <string name="title_donate">Donate</string>
+    <string name="title_marketplace">Marketplace</string>
+    <string name="title_news">News</string>
+    <string name="title_profile">Profile</string>
+</resources>

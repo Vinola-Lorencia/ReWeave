@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.reweave.ui.Homes.HomesFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_donate"
+        android:name="com.example.reweave.ui.Donate.DonateFragment"
+        android:label="@string/title_donate"
+        tools:layout="@layout/fragment_donate" />
+
+    <fragment
+        android:id="@+id/navigation_marketplace"
+        android:name="com.example.reweave.ui.Marketplace.MarketplaceFragment"
+        android:label="@string/title_marketplace"
+        tools:layout="@layout/fragment_marketplace" />
+
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.example.reweave.ui.News.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.reweave.ui.Profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
