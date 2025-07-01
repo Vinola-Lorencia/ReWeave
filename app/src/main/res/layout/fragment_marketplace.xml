@@ -200,7 +200,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45dp"
                     android:layout_marginLeft="20dp"
-                    android:text="More" />
+
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
