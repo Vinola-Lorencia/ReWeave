@@ -5,4 +5,6 @@
     <string name="title_marketplace">Marketplace</string>
     <string name="title_news">News</string>
     <string name="title_profile">Profile</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="update_kampanye">Update Kampanye</string>
 </resources>
