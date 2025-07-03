@@ -294,7 +294,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/nama1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="13dp"
@@ -302,19 +302,19 @@
                         android:text="Upcycled Cotton Bag" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/nama2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/nama3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView14"
+                        android:id="@+id/harga1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
@@ -327,7 +327,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/gambar2"
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:background="@drawable/tasdua" />
@@ -338,7 +338,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/nama4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="13dp"
@@ -346,19 +346,19 @@
                         android:text="Upcycled Cotton Bag" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/nama5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/nama6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView14"
+                        android:id="@+id/harga2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView" />
