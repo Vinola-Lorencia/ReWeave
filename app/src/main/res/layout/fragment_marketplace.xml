@@ -80,6 +80,7 @@
             android:layout_height="200dp"
 
             android:src="@drawable/promo1" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -90,54 +91,61 @@
                 android:id="@+id/crdtototebag"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp" >
+                app:cardCornerRadius="30dp"
+
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imagetas"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="9dp"
                     android:background="@drawable/tas" />
 
                 <TextView
                     android:id="@+id/texttas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="45dp"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/montserrat_medium"
                     android:text="Totebag" />
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/crdhat"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp" >
+                app:cardCornerRadius="30dp"
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imagehat"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/hat" />
 
                 <TextView
                     android:id="@+id/texthat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
                     android:layout_marginLeft="25dp"
+                    android:layout_marginTop="45dp"
                     android:text="Hat" />
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/crdfashion"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp" >
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imagefashion"
@@ -151,16 +159,17 @@
                     android:id="@+id/textfashion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="45dp"
                     android:text="Fashion" />
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/crddecor"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp" >
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imagdecor"
@@ -174,17 +183,18 @@
                     android:id="@+id/textdecor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
                     android:layout_marginLeft="18dp"
-                    android:textAlignment="center"
-                    android:text="Decor" />
+                    android:layout_marginTop="45dp"
+                    android:text="Decor"
+                    android:textAlignment="center" />
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/crdmore"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp" >
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imagemore"
@@ -198,8 +208,8 @@
                     android:id="@+id/textmore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="45dp"
                     android:text="More" />
 
             </androidx.cardview.widget.CardView>
@@ -208,6 +218,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_height="30dp"
             android:orientation="horizontal">
 
@@ -239,12 +251,12 @@
                 android:id="@+id/textViewseeall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_extrabold"
-                android:textColor="@color/purple_200"
+                android:text="See All "
                 android:textAlignment="textEnd"
-                android:layout_marginRight="10dp"
-                android:text="See All "/>
+                android:textColor="@color/purple_200" />
 
 
         </LinearLayout>
@@ -263,7 +275,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="130dp"
                     android:layout_height="150dp"
-                    android:background="@drawable/im"/>
+                    android:background="@drawable/tasdua"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
