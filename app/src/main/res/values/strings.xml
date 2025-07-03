@@ -7,4 +7,12 @@
     <string name="title_profile">Profile</string>
     <string name="notifikasi">Notifikasi</string>
     <string name="update_kampanye">Update Kampanye</string>
+    <string-array name="kota_array">
+        <item>Medan</item>
+        <item>Jakarta</item>
+        <item>Yogyakarta</item>
+        <item>Banten</item>
+        <item>Bali</item>
+        <item>Bandung</item>
+    </string-array>
 </resources>

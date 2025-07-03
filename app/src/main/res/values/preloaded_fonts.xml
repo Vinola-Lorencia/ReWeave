@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/alatsi</item>
+        <item>@font/andika_new_basic_bold</item>
+        <item>@font/anek_bangla_bold</item>
+        <item>@font/average_sans</item>
+        <item>@font/jacquarda_bastarda_9</item>
         <item>@font/montserrat</item>
         <item>@font/montserrat_extrabold</item>
         <item>@font/montserrat_medium</item>
