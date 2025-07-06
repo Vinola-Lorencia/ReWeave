@@ -59,7 +59,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/textViewGOOD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anek_bangla_bold"
@@ -81,7 +81,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/textViewLETS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_medium"
@@ -228,8 +228,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_medium"
                 android:text=" your clothes"
-                android:textColor="#009D23"
-                android:textcolor="#009521" />
+                android:textColor="@color/purple_200"
+                />
 
             <TextView
                 android:id="@+id/textView9"
