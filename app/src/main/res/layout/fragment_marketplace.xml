@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -91,7 +91,7 @@
                 android:id="@+id/crdtototebag"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                app:cardCornerRadius="30dp"
+                app:cardCornerRadius="40dp"
 
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="20dp">
@@ -321,48 +321,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/gambar2"
-                    android:layout_width="130dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/tasdua" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/nama4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="13dp"
-                        android:fontFamily="@font/montserrat_extrabold"
-                        android:text="Upcycled Cotton Bag" />
-
-                    <TextView
-                        android:id="@+id/nama5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-
-                    <TextView
-                        android:id="@+id/nama6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-
-                    <TextView
-                        android:id="@+id/harga2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
@@ -370,4 +328,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+
