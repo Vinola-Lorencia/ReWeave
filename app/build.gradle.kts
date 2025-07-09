@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+   
 
 }
 apply(plugin = "realm-android")
@@ -37,6 +38,8 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+
 }
 
 dependencies {
