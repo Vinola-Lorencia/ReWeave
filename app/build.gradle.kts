@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+   
+
 }
+apply(plugin = "realm-android")
+
+
 
 android {
     namespace = "com.example.reweave"
@@ -30,16 +34,17 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
+
     buildFeatures {
         viewBinding = true
     }
+
+
 }
 
 dependencies {
     implementation ("com.google.android.material:material:1.12.0")
+    implementation ("io.realm:realm-android-library:10.15.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
