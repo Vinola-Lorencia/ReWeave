@@ -85,44 +85,44 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kaos Bekas"
+            android:text="Tas Belanja Eco"
             android:textColor="#444"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="288dp"
+            tools:layout_editor_absoluteX="256dp"
             tools:layout_editor_absoluteY="32dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22 Juni 2025"
+            android:text="10 Juli 2025"
             android:textColor="#444"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="279dp"
+            tools:layout_editor_absoluteX="284dp"
             tools:layout_editor_absoluteY="56dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Diterima"
+            android:text="Berhasil"
             android:textColor="#2E7D32"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="314dp"
+            tools:layout_editor_absoluteX="317dp"
             tools:layout_editor_absoluteY="80dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+ 75 Poin"
+            android:text="- 300 Poin"
             android:textColor="#444"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="306dp"
+            tools:layout_editor_absoluteX="301dp"
             tools:layout_editor_absoluteY="104dp" />
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Poin Diperoleh"
+            android:text="Status Poin"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -133,29 +133,29 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status"
+            android:text="Status Penukaran"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="32dp"
             tools:layout_editor_absoluteY="80dp" />
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Barang"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="32dp"
-            tools:layout_editor_absoluteY="56dp" />
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tanggal"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="56dp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barang"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
