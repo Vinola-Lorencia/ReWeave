@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".RiwayatDonasiActivity">
+    tools:context=".RiwayatPoinActivity">
 
     <ImageView
         android:id="@+id/iv_back"
@@ -21,7 +21,7 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Riwayat Donasi"
+        android:text="Riwayat Poin"
         android:textSize="24sp"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -69,8 +69,8 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#1A000000"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="565dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="255dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="412dp"
@@ -144,7 +144,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tanggal"
+            android:text="Barang"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -155,7 +155,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Barang"
+            android:text="Tanggal"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -165,165 +165,10 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Barang"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="285dp" />
 
-    <TextView
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tanggal"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="311dp" />
 
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="336dp" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Poin Diperoleh"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="360dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Keset Bekas"
-        android:textColor="#444"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="283dp"
-        tools:layout_editor_absoluteY="285dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="20 Juni 2025"
-        android:textColor="#444"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="279dp"
-        tools:layout_editor_absoluteY="309dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dikirim"
-        android:textColor="#13317d"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="327dp"
-        tools:layout_editor_absoluteY="333dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ 65 Poin"
-        android:textColor="#444"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="307dp"
-        tools:layout_editor_absoluteY="357dp" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Barang"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="441dp" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tanggal"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="465dp" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="489dp" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Poin Diperoleh"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="513dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sepatu Bekas"
-        android:textColor="#444"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="441dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="17 Juni 2025"
-        android:textColor="#444"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="279dp"
-        tools:layout_editor_absoluteY="465dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ditolak"
-        android:textColor="#7d100c"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="327dp"
-        tools:layout_editor_absoluteY="489dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ 0 Poin"
-        android:textColor="#444"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="316dp"
-        tools:layout_editor_absoluteY="513dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
