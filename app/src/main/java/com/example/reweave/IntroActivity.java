@@ -2,7 +2,6 @@ package com.example.reweave;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +28,7 @@ public class IntroActivity extends AppCompatActivity {
             public int getItemCount() {
                 return 2;
             }
+
             @Override
             public Fragment createFragment(int position) {
                 return IntroFragment.newInstance(position);

@@ -1,24 +1,44 @@
 package com.example.reweave;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import io.realm.Realm;
+import com.example.reweave.Model.User;
 
 public class RegisterActivity extends AppCompatActivity {
+    EditText name, email, phone, password;
+    Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        Realm.init(this);
         setContentView(R.layout.activity_register);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        name = findViewById(R.id.edtnama);
+        email = findViewById(R.id.edtemail);
+        phone = findViewById(R.id.edtnmber);
+        password = findViewById(R.id.edtpassword);
+        btnRegister = findViewById(R.id.button2);
+
+        btnRegister.setOnClickListener(v -> {
+            Realm realm = Realm.getDefaultInstance();
+            realm.executeTransaction(r -> {
+                User user = r.createObject(User.class);
+                user.setName(name.getText().toString());
+                user.setEmail(email.getText().toString());
+                user.setPhone(phone.getText().toString());
+                user.setPassword(password.getText().toString());
+                Toast.makeText(this, "Register sukses", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
+            });
         });
     }
 }
