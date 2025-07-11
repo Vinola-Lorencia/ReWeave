@@ -21,7 +21,7 @@ public class IntroActivity extends AppCompatActivity {
 
         ViewPager2 viewPager = findViewById(R.id.introViewPager);
         TabLayout tabLayout = findViewById(R.id.introTabLayout);
-        ImageButton btnNext = findViewById(R.id.imageButton2);
+        ImageButton btnNext = findViewById(R.id.btnNext);
 
         viewPager.setUserInputEnabled(false);
         viewPager.setAdapter(new FragmentStateAdapter(this) {

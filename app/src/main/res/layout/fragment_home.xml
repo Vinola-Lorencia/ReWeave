@@ -70,12 +70,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/edtNama"
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/anek_bangla_bold"
-                android:text=" Avel."
                 android:textColor="#009521"
                 android:textSize="30dp"
                 android:textStyle="bold" />

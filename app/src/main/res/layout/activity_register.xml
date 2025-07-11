@@ -55,7 +55,7 @@
                 android:layout_marginTop="40dp"
                 android:ems="10"
                 android:fontFamily="@font/montserrat"
-                android:hint="Full name"
+                android:hint="Name"
                 android:textColor="#000000"
                 android:inputType="text"
                 android:textSize="14sp" />
