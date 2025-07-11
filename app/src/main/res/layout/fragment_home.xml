@@ -7,13 +7,13 @@
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="481dp"
+        android:layout_height="907dp"
         android:orientation="vertical"
-        android:paddingLeft="22dp"
-        android:paddingTop="22dp"
-        android:paddingRight="22dp"
-        android:paddingBottom="22dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
+        android:paddingTop="80dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
@@ -23,7 +23,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="201dp"
+                android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -33,7 +33,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
                     android:text="Your Location"
-                    android:textStyle="italic" />
+                    android:textStyle="italic"
+                    android:textSize="20dp"/>
 
                 <Spinner
                     android:id="@+id/spinner"
@@ -44,7 +45,7 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="88dp"
+                android:layout_width="101dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#DAFFFFFF"
@@ -65,7 +66,7 @@
                 android:fontFamily="@font/anek_bangla_bold"
                 android:text="Good morning,"
                 android:textColor="#000000"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -76,7 +77,7 @@
                 android:fontFamily="@font/anek_bangla_bold"
                 android:text=" Avel."
                 android:textColor="#009521"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -87,7 +88,7 @@
             android:fontFamily="@font/montserrat_medium"
             android:text="Let’s give new life to Old Clothes !"
             android:textColor="#000000"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
@@ -97,13 +98,13 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
-            app:cardBackgroundColor="#19FFFFFF"
+            app:cardBackgroundColor="#1E009521"
             app:cardCornerRadius="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#22009521"
+                android:background="#1E009521"
                 android:orientation="vertical"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
@@ -114,6 +115,7 @@
                     android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/montserrat"
                     android:gravity="center_horizontal"
                     android:text="Your Points"
@@ -124,6 +126,7 @@
                     android:id="@+id/textView21"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/montserratboldc"
                     android:gravity="center_horizontal"
                     android:text="2.760"
@@ -228,8 +231,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/montserrat_medium"
                 android:text=" your clothes"
-                android:textColor="@color/purple_200"
-                />
+                android:textColor="@color/purple_200" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -258,6 +260,7 @@
                     android:layout_width="214dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    app:srcCompat="@drawable/earth1"
                     tools:src="@drawable/earth1" />
 
                 <LinearLayout
@@ -315,6 +318,7 @@
                     android:layout_width="214dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    app:srcCompat="@drawable/earth2"
                     tools:src="@drawable/earth2" />
 
                 <LinearLayout
@@ -371,6 +375,7 @@
                     android:layout_width="214dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    app:srcCompat="@drawable/earth3"
                     tools:src="@drawable/earth3" />
 
                 <LinearLayout
@@ -399,13 +404,14 @@
 
                     <Button
                         android:id="@+id/button2"
-                        android:layout_height="30dp"
                         android:layout_width="100dp"
+                        android:layout_height="30dp"
                         android:layout_marginLeft="120dp"
                         android:fontFamily="@font/montserratboldc"
                         android:text="Join Donation"
                         android:textColor="#FFFFFF"
-                        android:textSize="6dp" /> />
+                        android:textSize="6dp" />
+                    />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

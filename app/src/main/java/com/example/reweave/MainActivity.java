@@ -1,34 +1,27 @@
 package com.example.reweave;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.core.splashscreen.SplashScreen;
 
 public class MainActivity extends AppCompatActivity {
-
-    private BottomNavigationView navView;
+    private boolean isLoading = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen splash = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Pastikan layout XML-nya sama
-        navView = findViewById(R.id.nav_view);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home,
-                R.id.navigation_donate,
-                R.id.navigation_marketplace,
-                R.id.navigation_news,
-                R.id.navigation_profile
-        ).build();
+        splash.setKeepOnScreenCondition(() -> isLoading);
 
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            isLoading = false;
+            startActivity(new Intent(this, IntroActivity.class));
+            finish();
+        }, 1000);
     }
 }
-
