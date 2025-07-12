@@ -1,54 +1,60 @@
 package com.example.reweave;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.realm.Realm;
-import io.realm.RealmResults;
 import com.example.reweave.Model.User;
 
+import io.realm.Realm;
+
 public class LoginActivity extends AppCompatActivity {
-    EditText email, password;
+
+    EditText edtEmail, edtPassword;
     Button btnLogin;
-    TextView txtRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Realm.init(this);
+        Realm.init(this); // Inisialisasi Realm jika belum
         setContentView(R.layout.activity_login);
 
-        email = findViewById(R.id.editTextTextEmailAddress);
-        password = findViewById(R.id.editTextTextPassword);
-        btnLogin = findViewById(R.id.button2);
-        txtRegister = findViewById(R.id.textView5);
+        edtEmail = findViewById(R.id.edtEmail);
+        edtPassword = findViewById(R.id.edtPassword);
+        btnLogin = findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(v -> {
-            Realm realm = Realm.getDefaultInstance();
-            RealmResults<User> results = realm.where(User.class)
-                    .equalTo("email", email.getText().toString())
-                    .equalTo("password", password.getText().toString())
-                    .findAll();
+            String email = edtEmail.getText().toString().trim();
+            String password = edtPassword.getText().toString().trim();
 
-            if (results.size() > 0) {
-                String name = results.get(0).getName();
-                Intent i = new Intent(this, MainUIActivity.class);
-                i.putExtra("nama_user", name);
-                startActivity(i);
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+                Toast.makeText(this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Realm realm = Realm.getDefaultInstance();
+            User user = realm.where(User.class)
+                    .equalTo("email", email)
+                    .equalTo("password", password)
+                    .findFirst();
+
+            if (user != null) {
+                // Simpan email ke SharedPreferences untuk ditampilkan di Profile
+                SharedPreferences preferences = getSharedPreferences("user_session", MODE_PRIVATE);
+                preferences.edit().putString("user_email", user.getEmail()).apply();
+
+                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, MainUIActivity.class));
                 finish();
             } else {
-                Toast.makeText(this, "Login gagal", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
             }
-        });
-
-        txtRegister.setOnClickListener(v -> {
-            startActivity(new Intent(this, RegisterActivity.class));
         });
     }
 }

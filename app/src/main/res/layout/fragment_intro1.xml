@@ -15,30 +15,30 @@
 
         <ImageView
             android:id="@+id/imgIntro"
-            android:gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="543dp"
+            android:gravity="center"
             android:src="@drawable/intro1" />
 
         <TextView
             android:id="@+id/txtTitle"
-            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/montserrat_extrabold"
             android:text="Less Waste"
             android:textColor="#0D0D0D"
-            android:textSize="36sp" />
+            android:textSize="48sp" />
 
         <TextView
             android:id="@+id/txtDescription"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_medium"
             android:text="More Purpose"
             android:textColor="#020202"
-            android:textSize="16sp" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
