@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText edtEmail, edtPassword;
     Button btnLogin;
+    TextView txtRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        txtRegister=findViewById(R.id.txtRegister);
 
         btnLogin.setOnClickListener(v -> {
             String email = edtEmail.getText().toString().trim();
@@ -55,6 +58,10 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        txtRegister.setOnClickListener(v -> {
+            startActivity(new Intent(this, RegisterActivity.class));
         });
     }
 }
