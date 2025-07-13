@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangePhotoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="22dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="70dp">
+
+      <TextView
+          android:id="@+id/txtProfile"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/montserratboldc"
+          android:text="Profile"
+          android:textColor="#000000"
+          android:textSize="20dp"
+          android:gravity="center_horizontal"
+          android:layout_marginBottom="30dp"
+          android:layout_marginTop="20dp"/>
+
+      <ImageView
+          android:id="@+id/imgProfile"
+          android:layout_width="115dp"
+          android:layout_height="108dp"
+          android:layout_gravity="center_horizontal"
+          app:srcCompat="@drawable/photo5"
+          tools:src="@drawable/photo5" />
+
+      <TextView
+          android:id="@+id/txtChange"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:fontFamily="@font/montserrat_semibold"
+          android:gravity="center_horizontal"
+          android:text="Change"
+          android:textColor="#D0000000" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="50dp"
+          android:layout_marginBottom="15dp"
+          android:textColor="#D0231F1F"
+          android:padding="5dp">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:text="Name"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/edtChName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:gravity="left"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="15dp"
+          android:textColor="#D0231F1F"
+          android:padding="5dp">
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:text="Phone number"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/edtChPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:gravity="left"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="15dp"
+          android:textColor="#D0231F1F"
+          android:padding="5dp">
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:text="E-mail"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/edtChEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:gravity="left"/>
+
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="15dp"
+          android:textColor="#D0231F1F"
+          android:padding="5dp">
+
+        <TextView
+            android:id="@+id/txtPass"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat"
+            android:text="Password"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/edtChPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:inputType="textPassword" />
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="15dp"
+          android:textColor="#D0231F1F">
+      </LinearLayout>
+
+      <Button
+          android:id="@+id/btnSave"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/montserratboldc"
+          android:gravity="center_horizontal"
+          android:text="Save" />
+    </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>

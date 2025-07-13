@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.reweave">
+    package="com.example.reweave" >
 
     <application
         android:name=".Reweave"
@@ -13,40 +16,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Reweave"
-        tools:targetApi="31">
-
+        tools:targetApi="31" >
+        <activity
+            android:name=".ChangePhotoActivity"
+            android:exported="false" />
         <!-- Splash screen atau launcher pertama -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MySplashscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Tambahan activity yang diperlukan -->
-        <activity android:name=".IntroActivity" android:exported="true" />
-        <activity android:name=".LoginActivity" android:exported="true" />
-        <activity android:name=".RegisterActivity" android:exported="true" />
-        <activity android:name=".MainUIActivity" android:exported="true" />
-        <activity android:name=".RiwayatPoinActivity" android:exported="false" />
-<!--        <activity android:name=".PenukaranPoinBerhasilActivity" android:exported="false" />-->
-        <activity android:name=".RiwayatDonasiActivity" android:exported="true">
+        </activity> <!-- Tambahan activity yang diperlukan -->
+        <activity
+            android:name=".IntroActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainUIActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RiwayatPoinActivity"
+            android:exported="false" /> <!-- <activity android:name=".PenukaranPoinBerhasilActivity" android:exported="false" /> -->
+        <activity
+            android:name=".RiwayatDonasiActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".NotificationActivity" android:exported="true">
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <!-- Metadata font -->
+        </activity> <!-- Metadata font -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
