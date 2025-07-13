@@ -1,12 +1,15 @@
 package com.example.reweave.ui.Marketplace;
 
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.example.reweave.Adapter.FlashSaleAdapter;
 import com.example.reweave.Model.FlashSale;
 import com.example.reweave.R;
+import com.example.reweave.TampilanProdukActivity;
 
 import java.util.ArrayList;
 
@@ -25,7 +29,10 @@ import io.realm.RealmResults;
 public class MarketplaceFragment extends Fragment {
 
     ListView listViewFlashSale;
+
+    TextView textViewseeall;
     ArrayList<FlashSale> FlashSaleArrayList;
+    CardView crdfashion, crdhat, crdtototebag, crddecor, crdseeall;
     FlashSaleAdapter adapter;
     private MarketplaceViewModel mViewModel;
 
@@ -39,6 +46,38 @@ public class MarketplaceFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_marketplace, container, false);
         listViewFlashSale = view.findViewById(R.id.listViewFlashSale);
+        textViewseeall = view.findViewById(R.id.textViewseeall);
+        crdfashion = view.findViewById(R.id.crdfashion);
+        crdhat = view.findViewById(R.id.crdhat);
+        crdtototebag = view.findViewById(R.id.crdtototebag);
+        crddecor = view.findViewById(R.id.crddecor);
+        crdseeall = view.findViewById(R.id.crdseelall);
+
+
+        crdfashion.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "fashion");
+            startActivity(intent);
+        });
+
+        crdhat.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "hat");
+            startActivity(intent);
+        });
+
+        crdtototebag.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "totebag");
+            startActivity(intent);
+        });
+
+        crddecor.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "decor");
+            startActivity(intent);
+        });
+
 
         tambahDataDummyFlashSale(); // Tambah data dummy sekali
         FlashSaleArrayList = getAllProduk();
@@ -50,6 +89,10 @@ public class MarketplaceFragment extends Fragment {
             Toast.makeText(requireContext(),
                     "Dipilih: " + adapter.getItem(position).getNamaBarangFlashSale(),
                     Toast.LENGTH_SHORT).show();
+        });
+        crdseeall.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            startActivity(intent);
         });
 
         return view;

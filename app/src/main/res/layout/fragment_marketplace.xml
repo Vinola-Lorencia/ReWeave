@@ -112,7 +112,7 @@
                     android:layout_marginTop="45dp"
                     android:textSize="13dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:text="Totebag" />
+                    android:text="Bag" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -198,7 +198,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/crdmore"
+                android:id="@+id/crdseelall"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
@@ -214,13 +214,13 @@
                     android:background="@drawable/more" />
 
                 <TextView
-                    android:id="@+id/textmore"
+                    android:id="@+id/textseeall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="45dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:text="More"
+                    android:text="See All"
                     android:textSize="13dp" />
 
             </androidx.cardview.widget.CardView>
@@ -267,6 +267,8 @@
                 android:fontFamily="@font/montserrat_extrabold"
                 android:text="See All "
                 android:textAlignment="textEnd"
+                android:clickable="true"
+                android:focusable="true"
                 android:textColor="@color/purple_200" />
 
 
@@ -279,8 +281,6 @@
 
 
     </LinearLayout>
-
-
     </LinearLayout>
 
 
