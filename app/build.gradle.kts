@@ -44,7 +44,7 @@ android {
 
 dependencies {
     implementation ("com.google.android.material:material:1.12.0")
-    implementation ("io.realm:realm-android-library:10.15.1")
+    implementation ("io.realm:realm-android-library:10.19.0")
     implementation ("androidx.core:core-splashscreen:1.0.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
