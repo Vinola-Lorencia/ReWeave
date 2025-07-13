@@ -1,38 +1,44 @@
 package com.example.reweave.ui.Profile;
 
-import androidx.lifecycle.ViewModelProvider;
-
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.TextView;
+import com.example.reweave.Model.User;
 import com.example.reweave.R;
+import io.realm.Realm;
 
 public class ProfileFragment extends Fragment {
 
-    private ProfileViewModel mViewModel;
-
-    public static ProfileFragment newInstance() {
-        return new ProfileFragment();
-    }
+    private TextView tvName, tvEmail, tvPhone;
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, container, false);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
-        // TODO: Use the ViewModel
-    }
+        tvName = view.findViewById(R.id.textView43);
+        tvEmail = view.findViewById(R.id.textView46);
+        tvPhone = view.findViewById(R.id.textView48);
 
+        SharedPreferences preferences = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE);
+        String email = preferences.getString("user_email", null);
+
+        if (email != null) {
+            Realm realm = Realm.getDefaultInstance();
+            User user = realm.where(User.class).equalTo("email", email).findFirst();
+
+            if (user != null) {
+                tvName.setText(user.getName());
+                tvEmail.setText(user.getEmail());
+                tvPhone.setText(user.getPhone());
+            }
+        }
+
+        return view;
+    }
 }
