@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.reweave.Adapter.FlashSaleAdapter;
+import com.example.reweave.KeranjangActivity;
 import com.example.reweave.Model.FlashSale;
 import com.example.reweave.R;
 import com.example.reweave.TampilanProdukActivity;
@@ -29,6 +31,7 @@ import io.realm.RealmResults;
 public class MarketplaceFragment extends Fragment {
 
     ListView listViewFlashSale;
+    ImageView imagekeranjang;
 
     TextView textViewseeall;
     ArrayList<FlashSale> FlashSaleArrayList;
@@ -52,6 +55,8 @@ public class MarketplaceFragment extends Fragment {
         crdtototebag = view.findViewById(R.id.crdtototebag);
         crddecor = view.findViewById(R.id.crddecor);
         crdseeall = view.findViewById(R.id.crdseelall);
+        imagekeranjang = view.findViewById(R.id.imagekeranjang);
+
 
 
         crdfashion.setOnClickListener(v -> {
@@ -75,6 +80,12 @@ public class MarketplaceFragment extends Fragment {
         crddecor.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
             intent.putExtra("kategori", "decor");
+            startActivity(intent);
+        });
+
+        imagekeranjang.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), KeranjangActivity.class);
+
             startActivity(intent);
         });
 

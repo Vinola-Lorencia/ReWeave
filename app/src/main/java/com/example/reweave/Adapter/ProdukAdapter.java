@@ -159,7 +159,7 @@ public class ProdukAdapter extends ArrayAdapter<Produk> {
             holder.imgProduk = convertView.findViewById(R.id.imgProduk);
             holder.txtNamaProduk = convertView.findViewById(R.id.txtNamaProduk);
             holder.txtHargaProduk = convertView.findViewById(R.id.txtHargaProduk);
-            holder.imgKeranjang = convertView.findViewById(R.id.imgKeranjang);
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -177,9 +177,8 @@ public class ProdukAdapter extends ArrayAdapter<Produk> {
                 holder.txtHargaProduk.setTextColor(Color.parseColor("#04AD4E"));
             }
 
-            holder.imgKeranjang.setOnClickListener(v ->
-                    Toast.makeText(context, "Tambah ke keranjang: " + produk.getNamaProduk(), Toast.LENGTH_SHORT).show()
-            );
+
+
         }
 
         return convertView;

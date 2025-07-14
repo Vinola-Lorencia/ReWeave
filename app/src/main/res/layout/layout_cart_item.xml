@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/f1" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Basic T-shirt"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_toEndOf="@id/imgProduct"
+        android:layout_marginStart="12dp" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutQuantity"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toEndOf="@id/imgProduct"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:id="@+id/btnMinus"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="-"
+            android:gravity="center"
+            android:textColor="@color/purple_200"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtQuantity"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            android:text="2"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/btnPlus"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:text="+"
+            android:gravity="center"
+            android:textColor="#4CAF50"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="40000"
+        android:textSize="16sp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/imgProduct" />
+
+    <ImageView
+        android:id="@+id/btnDelete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/txtPrice"
+        android:layout_alignEnd="@id/txtPrice"
+        android:layout_marginTop="16dp"
+        android:src="@android:drawable/ic_menu_delete"
+         />
+
+</RelativeLayout>

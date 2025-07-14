@@ -1,24 +1,74 @@
 package com.example.reweave;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.reweave.Adapter.KeranjangAdapter;
+import com.example.reweave.Model.Keranjang;
+
+import java.util.ArrayList;
+
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class KeranjangActivity extends AppCompatActivity {
+
+    ListView listViewCart;
+    Button btnProceed;
+    ArrayList<Keranjang> listKeranjang;
+    KeranjangAdapter keranjangAdapter;
+    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_keranjang);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        Realm.init(this);
+        realm = Realm.getDefaultInstance();
+
+        listViewCart = findViewById(R.id.listViewCart);
+        btnProceed = findViewById(R.id.btnProceed);
+
+        RealmResults<Keranjang> results = realm.where(Keranjang.class).findAll();
+        listKeranjang = new ArrayList<>(realm.copyFromRealm(results));
+
+        keranjangAdapter = new KeranjangAdapter(this, listKeranjang);
+        listViewCart.setAdapter(keranjangAdapter);
+
+        btnProceed.setOnClickListener(v -> {
+            if (listKeranjang.isEmpty()) {
+                Toast.makeText(this, "Keranjang kosong", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            int totalHarga = 0;
+            ArrayList<String> listIdKeranjang = new ArrayList<>();
+
+            for (Keranjang k : listKeranjang) {
+                totalHarga += k.getHarga() * k.getKuantitas();
+                listIdKeranjang.add(k.getId()); // hanya kirim ID
+            }
+
+            Intent intent = new Intent(KeranjangActivity.this, CheckOutCartActivity.class);
+            intent.putStringArrayListExtra("list_id_keranjang", listIdKeranjang);
+            intent.putExtra("total", totalHarga);
+            startActivity(intent);
+
+            // Keranjang tidak langsung dihapus, tunggu pembayaran
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (realm != null) {
+            realm.close();
+        }
     }
 }

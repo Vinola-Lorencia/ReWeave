@@ -11,23 +11,22 @@ public class Produk extends RealmObject {
     private boolean onSale;
     private String kategori;
     private double rating, like;
-    public Produk(){}
+    private int quantity = 1;
 
+    public Produk() {}
 
-
-
-    public Produk(int produkID, String namaProduk, int harga, int gambar, boolean onsale, String kategori, double rating, double like, String detail) {
+    public Produk(int produkID, String namaProduk, int harga, int gambar, boolean onsale,
+                  String kategori, double rating, double like, String detail, int quantity) {
         this.ProdukID = produkID;
-        NamaProduk = namaProduk;
-        Harga = harga;
-        Gambar = gambar;
-        onSale = onsale;
+        this.NamaProduk = namaProduk;
+        this.Harga = harga;
+        this.Gambar = gambar;
+        this.onSale = onsale;
         this.kategori = kategori;
-        this.like = like;
         this.rating = rating;
-        Detail = detail;
-
-
+        this.like = like;
+        this.Detail = detail;
+        this.quantity = quantity;
     }
 
     public int getProdukID() {
@@ -35,7 +34,7 @@ public class Produk extends RealmObject {
     }
 
     public void setProdukID(int produkID) {
-        ProdukID = produkID;
+        this.ProdukID = produkID;
     }
 
     public String getNamaProduk() {
@@ -43,7 +42,7 @@ public class Produk extends RealmObject {
     }
 
     public void setNamaProduk(String namaProduk) {
-        NamaProduk = namaProduk;
+        this.NamaProduk = namaProduk;
     }
 
     public int getHarga() {
@@ -51,7 +50,7 @@ public class Produk extends RealmObject {
     }
 
     public void setHarga(int harga) {
-        Harga = harga;
+        this.Harga = harga;
     }
 
     public int getGambar() {
@@ -59,7 +58,7 @@ public class Produk extends RealmObject {
     }
 
     public void setGambar(int gambar) {
-        Gambar = gambar;
+        this.Gambar = gambar;
     }
 
     public boolean isOnSale() {
@@ -99,6 +98,15 @@ public class Produk extends RealmObject {
     }
 
     public void setDetail(String detail) {
-        Detail = detail;
+        this.Detail = detail;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
+

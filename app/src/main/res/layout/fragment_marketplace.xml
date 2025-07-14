@@ -30,7 +30,7 @@
                 android:textAlignment="center" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imagekeranjang"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="10dp"
