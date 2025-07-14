@@ -34,14 +34,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratboldc"
         android:text="Tukar Poin"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@id/iv_back"
         app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_point"
@@ -76,19 +77,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
+                    android:fontFamily="@font/montserratboldc"
+                    android:text="2760 Points"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="2760 Points" />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:textColor="@color/black"
-                android:text="Kadaluarsa 31 Des 2025" />
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Kadaluarsa 31 Des 2025"
+                android:textColor="@color/black" />
 
             <View
                 android:layout_width="match_parent"
@@ -106,13 +109,14 @@
                     android:id="@+id/btn_riwayat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="4dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="4dp"
-                    android:textColor="#F96900"
+                    android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="Riwayat" />
+                    android:text="Riwayat"
+                    android:textColor="#F96900" />
 
                 <View
                     android:layout_width="1dp"
@@ -124,13 +128,14 @@
                     android:id="@+id/btn_tambah_poin"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="4dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="4dp"
-                    android:textColor="#F96900"
+                    android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="Tambah Poin" />
+                    android:text="Tambah Poin"
+                    android:textColor="#F96900" />
 
             </LinearLayout>
 

@@ -2,6 +2,7 @@ package com.example.reweave.ui.Homes;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -12,14 +13,19 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.reweave.ChangePoinActivity;
+import com.example.reweave.MainUIActivity;
 import com.example.reweave.Model.User;
 import com.example.reweave.R;
+import com.example.reweave.RedeemPoinActivity;
+import com.example.reweave.RiwayatPoinActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -37,13 +43,16 @@ public class HomesFragment extends Fragment {
     private TextView edtNama, txtLocation;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
+    private ImageButton btnCollect,btnChange;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         edtNama = root.findViewById(R.id.edtNama);
-        txtLocation = root.findViewById(R.id.location); // Pastikan TextView ini ada di layout kamu
+        txtLocation = root.findViewById(R.id.location);// Pastikan TextView ini ada di layout kamu
+        btnCollect = root.findViewById(R.id.btnCollect);
+        btnChange=root.findViewById(R.id.btnChange);
 
         // Ambil dan tampilkan nama user dari Realm
         SharedPreferences preferences = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE);
@@ -56,6 +65,17 @@ public class HomesFragment extends Fragment {
                 edtNama.setText(user.getName());
             }
         }
+
+        btnChange.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), RedeemPoinActivity.class);
+            startActivity(intent);
+        });
+
+        btnCollect.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), MainUIActivity.class);
+            startActivity(intent);
+        });
+
 
         // Inisialisasi client GPS
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireContext());

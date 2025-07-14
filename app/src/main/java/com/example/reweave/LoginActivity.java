@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText edtEmail, edtPassword;
     Button btnLogin;
-    TextView txtRegister;
+    TextView txtRegister,txtForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         txtRegister=findViewById(R.id.txtRegister);
+        txtForgotPassword = findViewById(R.id.textView3);
 
         btnLogin.setOnClickListener(v -> {
             String email = edtEmail.getText().toString().trim();
@@ -60,6 +61,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        txtForgotPassword.setOnClickListener(v -> {
+            startActivity(new Intent(this, ForgetPasswordActivity.class));
+        });
         txtRegister.setOnClickListener(v -> {
             startActivity(new Intent(this, RegisterActivity.class));
         });
