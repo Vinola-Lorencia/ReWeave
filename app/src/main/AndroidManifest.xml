@@ -32,25 +32,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Tambahan activity yang diperlukan -->
-        <activity
-            android:name=".IntroActivity"
-            android:exported="true" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MainUIActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RiwayatPoinActivity"
-            android:exported="false" /> <!-- <activity android:name=".PenukaranPoinBerhasilActivity" android:exported="false" /> -->
-        <activity
-            android:name=".RiwayatDonasiActivity"
-            android:exported="true" >
+        </activity>
+
+        <!-- Tambahan activity yang diperlukan -->
+        <activity android:name=".IntroActivity" android:exported="true" />
+        <activity android:name=".LoginActivity" android:exported="true" />
+        <activity android:name=".RegisterActivity" android:exported="true" />
+        <activity android:name=".MainUIActivity" android:exported="true" />
+        <activity android:name=".RiwayatPoinActivity" android:exported="false" />
+        <activity android:name=".ChangePoinActivity" android:exported="false" android:theme="@style/Theme.Point" />
+        <activity android:name=".RedeemPoinActivity" android:exported="false" android:theme="@style/Theme.Point" />
+        <!--        <activity android:name=".PenukaranPoinBerhasilActivity" android:exported="false" />-->
+        <activity android:name=".RiwayatDonasiActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

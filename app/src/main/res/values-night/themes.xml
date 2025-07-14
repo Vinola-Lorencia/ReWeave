@@ -24,4 +24,6 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item> <!-- Untuk bulat penuh -->
     </style>
+
+    <style name="Theme.Point"  parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 </resources>
