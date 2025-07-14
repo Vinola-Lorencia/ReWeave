@@ -33,7 +33,7 @@ public class MarketplaceFragment extends Fragment {
     ListView listViewFlashSale;
     ImageView imagekeranjang;
 
-    TextView textViewseeall;
+
     ArrayList<FlashSale> FlashSaleArrayList;
     CardView crdfashion, crdhat, crdtototebag, crddecor, crdseeall;
     FlashSaleAdapter adapter;
@@ -49,7 +49,7 @@ public class MarketplaceFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_marketplace, container, false);
         listViewFlashSale = view.findViewById(R.id.listViewFlashSale);
-        textViewseeall = view.findViewById(R.id.textViewseeall);
+
         crdfashion = view.findViewById(R.id.crdfashion);
         crdhat = view.findViewById(R.id.crdhat);
         crdtototebag = view.findViewById(R.id.crdtototebag);
@@ -130,7 +130,7 @@ public class MarketplaceFragment extends Fragment {
                 item1.setDetail("Tas berbahan denim daur ulang");
                 item1.setHargaAwal("250000");
                 item1.setHargaDiskon("150000");
-                item1.setGambarProduk(R.drawable.tassatu);
+                item1.setGambarProduk(R.drawable.t3);
 
                 FlashSale item2 = realm.createObject(FlashSale.class, 2);
                 item2.setNamaBarangFlashSale("Eco Tote Bag");

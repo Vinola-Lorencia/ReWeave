@@ -93,14 +93,14 @@
                 android:layout_height="70dp"
                 app:cardCornerRadius="40dp"
 
-                android:layout_marginLeft="13dp"
+                android:layout_marginLeft="18dp"
                 android:layout_marginTop="20dp">
 
                 <ImageView
                     android:id="@+id/imagetas"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="9dp"
                     android:background="@drawable/tas" />
 
@@ -108,7 +108,7 @@
                     android:id="@+id/texttas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="45dp"
                     android:textSize="13dp"
                     android:fontFamily="@font/montserrat_medium"
@@ -257,19 +257,6 @@
                     android:fontFamily="@font/montserrat_extrabold"
                     android:text="10:20:30" />
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/textViewseeall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/montserrat_extrabold"
-                android:text="See All "
-                android:textAlignment="textEnd"
-                android:clickable="true"
-                android:focusable="true"
-                android:textColor="@color/purple_200" />
 
 
         </LinearLayout>

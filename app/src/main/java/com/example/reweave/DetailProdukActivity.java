@@ -17,10 +17,10 @@ import io.realm.Realm;
 
 public class DetailProdukActivity extends AppCompatActivity {
 
-    ImageView imgProdukDetail;
+    ImageView imgProdukDetail, btnKeranjang;
     TextView txtNamaProdukDetail, txtHargaProdukDetail, txtDetailProduk;
     TextView txtQuantity;
-    Button btnMinus, btnPlus, btnBuyNow, btnKeranjang;
+    Button btnMinus, btnPlus, btnBuyNow;
 
     int quantity = 1;
     Realm realm;
@@ -77,7 +77,7 @@ public class DetailProdukActivity extends AppCompatActivity {
             Intent intent = new Intent(DetailProdukActivity.this, CheckOutActivity.class); // FIX: Nama class CheckoutActivity harus sesuai nama file .java
             intent.putExtra("nama", nama);
             intent.putExtra("harga", harga);
-            intent.putExtra("gambar", gambar);
+            intent.putExtra("gambarResId", gambar);
             intent.putExtra("kuantitas", quantity);
             startActivity(intent);
         });
