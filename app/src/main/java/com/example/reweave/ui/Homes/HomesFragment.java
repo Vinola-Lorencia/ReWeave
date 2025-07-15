@@ -22,7 +22,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.reweave.ChangePoinActivity;
-import com.example.reweave.FormulirDonasi;
 import com.example.reweave.MainUIActivity;
 import com.example.reweave.Model.Point;
 import com.example.reweave.Model.User;
@@ -89,9 +88,9 @@ public class HomesFragment extends Fragment {
         // Navigasi tombol
         btnChange.setOnClickListener(v -> startActivity(new Intent(requireContext(), ChangePoinActivity.class)));
         btnCollect.setOnClickListener(v -> startActivity(new Intent(requireContext(), MainUIActivity.class)));
-        button.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
-        button1.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
-        button2.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
+//        button.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
+//        button1.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
+//        button2.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
         btnot.setOnClickListener(v -> startActivity(new Intent(requireContext(), NotificationActivity.class)));
 
         // Inisialisasi GPS

@@ -12,6 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.reweave.Model.Point;
+import com.example.reweave.Model.RedeemHistory;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import io.realm.Realm;
 
@@ -34,15 +39,12 @@ public class RedeemPoinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redeem_poin);
 
-        // Init Realm
         Realm.init(this);
         realm = Realm.getDefaultInstance();
 
-        // Get user email from SharedPreferences
         SharedPreferences prefs = getSharedPreferences("user_session", MODE_PRIVATE);
         userEmail = prefs.getString("user_email", "");
 
-        // Ambil data dari intent
         promoTitle = getIntent().getStringExtra("promo_title");
         promoPoints = getIntent().getIntExtra("promo_points", 0);
         promoImage = getIntent().getIntExtra("promo_image", 0);
@@ -118,9 +120,17 @@ public class RedeemPoinActivity extends AppCompatActivity {
                 if (point != null) {
                     point.setPoints(point.getPoints() - totalPoints);
                 }
+
+                // Simpan ke Riwayat Penukaran
+                RedeemHistory history = r.createObject(RedeemHistory.class, System.currentTimeMillis());
+                history.setEmail(userEmail);
+                history.setTitle(promoTitle);
+                history.setQuantity(quantity);
+                history.setTotalPoints(totalPoints);
+                // Optional: Tambahkan tanggal penukaran jika model mendukung
             });
 
-            Toast.makeText(this, "Congrats, You have redeem the point " + quantity + " " + promoTitle, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Congrats, You have redeemed " + quantity + "x " + promoTitle, Toast.LENGTH_SHORT).show();
             finish();
         } else {
             Toast.makeText(this, "Point isn't enough", Toast.LENGTH_SHORT).show();
