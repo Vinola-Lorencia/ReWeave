@@ -3,8 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
-apply(plugin = "realm-android")
-
 android {
     namespace = "com.example.reweave"
     compileSdk = 35
@@ -40,11 +38,11 @@ android {
 }
 
 dependencies {
-    implementation ("com.google.android.gms:play-services-location:21.0.1")
-    implementation ("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.material:material:1.12.0")
 
-    // Tidak perlu ini:
-    // implementation ("io.realm:realm-android-library:10.19.0")
+    // ✅ Realm Legacy compatible with Java
+    implementation("io.realm:realm-android:5.15.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
