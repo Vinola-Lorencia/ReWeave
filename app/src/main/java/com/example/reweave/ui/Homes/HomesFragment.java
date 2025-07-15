@@ -25,6 +25,7 @@ import com.example.reweave.ChangePoinActivity;
 import com.example.reweave.FormulirDonasi;
 import com.example.reweave.MainUIActivity;
 import com.example.reweave.Model.User;
+import com.example.reweave.NotificationActivity;
 import com.example.reweave.R;
 import com.example.reweave.RedeemPoinActivity;
 import com.example.reweave.RiwayatPoinActivity;
@@ -45,7 +46,7 @@ public class HomesFragment extends Fragment {
     private TextView edtNama, txtLocation;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
-    private ImageButton btnCollect,btnChange;
+    private ImageButton btnCollect,btnChange,btnot;
     private Button button, button1, button2;
 
     @Override
@@ -56,6 +57,7 @@ public class HomesFragment extends Fragment {
         txtLocation = root.findViewById(R.id.location);// Pastikan TextView ini ada di layout kamu
         btnCollect = root.findViewById(R.id.btnCollect);
         btnChange=root.findViewById(R.id.btnChange);
+        btnot=root.findViewById(R.id.imagenot);
         button = root.findViewById(R.id.button);
         button1 = root.findViewById(R.id.button1);
         button2 = root.findViewById(R.id.button2);
@@ -99,7 +101,10 @@ public class HomesFragment extends Fragment {
             startActivity(intent);
         });
 
-
+        btnot.setOnClickListener(v ->{
+            Intent intent = new Intent(requireContext(), NotificationActivity.class);
+            startActivity(intent);
+        });
 
         // Inisialisasi client GPS
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireContext());
