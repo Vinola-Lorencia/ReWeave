@@ -75,6 +75,7 @@ public class DetailProdukActivity extends AppCompatActivity {
         // Aksi tombol Buy Now => Ke halaman checkout
         btnBuyNow.setOnClickListener(v -> {
             Intent intent = new Intent(DetailProdukActivity.this, CheckOutActivity.class); // FIX: Nama class CheckoutActivity harus sesuai nama file .java
+            intent.putExtra("tipe", "produk");
             intent.putExtra("nama", nama);
             intent.putExtra("harga", harga);
             intent.putExtra("gambarResId", gambar);

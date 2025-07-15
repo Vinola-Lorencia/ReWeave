@@ -18,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.reweave.Adapter.FlashSaleAdapter;
+import com.example.reweave.CheckOutActivity;
 import com.example.reweave.KeranjangActivity;
 import com.example.reweave.Model.FlashSale;
 import com.example.reweave.R;
@@ -97,9 +98,17 @@ public class MarketplaceFragment extends Fragment {
         listViewFlashSale.setAdapter(adapter);
 
         listViewFlashSale.setOnItemClickListener((parent, view1, position, id) -> {
-            Toast.makeText(requireContext(),
-                    "Dipilih: " + adapter.getItem(position).getNamaBarangFlashSale(),
-                    Toast.LENGTH_SHORT).show();
+            FlashSale item = adapter.getItem(position);
+
+            Intent intent = new Intent(requireContext(), CheckOutActivity.class);
+            intent.putExtra("tipe", "flashsale");
+            intent.putExtra("nama", item.getNamaBarangFlashSale());
+            intent.putExtra("harga", Integer.parseInt(item.getHargaDiskon()));
+            intent.putExtra("hargaAwal", item.getHargaAwal());
+            intent.putExtra("kuantitas", 1); // default 1
+            intent.putExtra("gambarResId", item.getGambarProduk());
+
+            startActivity(intent);
         });
         crdseeall.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
