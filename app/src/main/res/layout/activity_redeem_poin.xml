@@ -35,14 +35,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tukar Poin"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/montserratboldc"
+        android:text="Change Points"
         android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@id/iv_back"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/iv_back"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/iv_back" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_point"
@@ -64,9 +65,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Poin Kamu"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Your points"
                 android:textColor="@color/black"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -85,10 +87,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
+                    android:fontFamily="@font/montserratboldc"
+                    android:text="2760 Points"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="20sp"
-                    android:text="2760 Points" />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -125,10 +128,11 @@
                 android:id="@+id/tv_promo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:layout_marginHorizontal="8dp"
-                android:textColor="@color/black"
-                android:text="Kode Promo Grab" />
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Grab Promo Code"
+                android:textColor="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -153,12 +157,12 @@
                         android:id="@+id/tv_point"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="200 Point"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="#FE9923"
                         android:layout_marginStart="4dp"
-                        />
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="200 Points"
+                        android:textColor="#FE9923"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -190,9 +194,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Jumlah"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Total"
                 android:textColor="@color/black"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <ImageButton
                 android:id="@+id/btn_minus"
@@ -207,10 +212,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="1"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/btn_plus"
@@ -231,10 +237,12 @@
         android:layout_marginHorizontal="32dp"
         android:layout_marginVertical="24dp"
         android:background="#009521"
-        android:text="Tukar"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Change"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/cv_quantity"/>
+        app:layout_constraintTop_toBottomOf="@id/cv_quantity"
+        tools:layout_editor_absoluteX="32dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserratboldc"
-        android:text="Tukar Poin"
+        android:text="Change Points"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -90,7 +90,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="Kadaluarsa 31 Des 2025"
+                android:text="Expires on December 31, 2025"
                 android:textColor="@color/black" />
 
             <View
@@ -115,7 +115,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="Riwayat"
+                    android:text="History"
                     android:textColor="#F96900" />
 
                 <View
@@ -134,7 +134,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
-                    android:text="Tambah Poin"
+                    android:text="Collect Points"
                     android:textColor="#F96900" />
 
             </LinearLayout>

@@ -1,7 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-
-
 }
 apply(plugin = "realm-android")
 
