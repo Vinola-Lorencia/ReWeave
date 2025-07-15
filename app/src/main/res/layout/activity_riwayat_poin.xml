@@ -88,13 +88,13 @@
             android:text="Tas Belanja Eco"
             android:textColor="#444"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteX="260dp"
             tools:layout_editor_absoluteY="32dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 Juli 2025"
+            android:text="22 Juni 2025"
             android:textColor="#444"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="284dp"
@@ -106,7 +106,7 @@
             android:text="Berhasil"
             android:textColor="#2E7D32"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="317dp"
+            tools:layout_editor_absoluteX="322dp"
             tools:layout_editor_absoluteY="80dp" />
 
         <TextView
@@ -115,7 +115,7 @@
             android:text="- 300 Poin"
             android:textColor="#444"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="301dp"
+            tools:layout_editor_absoluteX="306dp"
             tools:layout_editor_absoluteY="104dp" />
 
         <TextView
@@ -161,7 +161,6 @@
             android:textStyle="bold"
             tools:layout_editor_absoluteX="32dp"
             tools:layout_editor_absoluteY="32dp" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
