@@ -24,7 +24,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import io.realm.Realm;
 
-public class FormulirDonasi extends Fragment {
+public class DonationActivity extends Fragment {
 
     private static final int PICK_IMAGE_REQUEST = 101;
     private Uri selectedImageUri;
@@ -41,7 +41,7 @@ public class FormulirDonasi extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_formulir_donasi, container, false);
+        View view = inflater.inflate(R.layout.fragment_donate, container, false);
 
         Realm.init(requireContext());
         realm = Realm.getDefaultInstance();
