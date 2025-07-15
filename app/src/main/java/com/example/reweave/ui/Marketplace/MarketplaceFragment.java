@@ -123,30 +123,35 @@ public class MarketplaceFragment extends Fragment {
 
     private void tambahDataDummyFlashSale() {
         Realm realm = Realm.getDefaultInstance();
-        if (realm.where(FlashSale.class).findAll().isEmpty()) {
-            realm.executeTransaction(r -> {
-                FlashSale item1 = realm.createObject(FlashSale.class, 1);
-                item1.setNamaBarangFlashSale("Upcycled Denim Bag");
-                item1.setDetail("Tas berbahan denim daur ulang");
-                item1.setHargaAwal("250000");
-                item1.setHargaDiskon("150000");
-                item1.setGambarProduk(R.drawable.t3);
 
-                FlashSale item2 = realm.createObject(FlashSale.class, 2);
-                item2.setNamaBarangFlashSale("Eco Tote Bag");
-                item2.setDetail("Tote bag ramah lingkungan");
-                item2.setHargaAwal("180000");
-                item2.setHargaDiskon("120000");
-                item2.setGambarProduk(R.drawable.tasdua);
+        // Hapus semua data lama dulu
+        realm.executeTransaction(r -> r.delete(FlashSale.class));
 
-                FlashSale item3 = realm.createObject(FlashSale.class, 3);
-                item3.setNamaBarangFlashSale("Canvas Bag Limited");
-                item3.setDetail("Tas kanvas edisi terbatas");
-                item3.setHargaAwal("300000");
-                item3.setHargaDiskon("200000");
-                item3.setGambarProduk(R.drawable.tas3);
-            });
-        }
+        // Tambah data baru setelah dihapus
+        realm.executeTransaction(r -> {
+            FlashSale item1 = r.createObject(FlashSale.class, 1);
+            item1.setNamaBarangFlashSale("Upcycled Denim Bag");
+            item1.setDetail("Tas berbahan denim daur ulang");
+            item1.setHargaAwal("250000");
+            item1.setHargaDiskon("50000");
+            item1.setGambarProduk(R.drawable.tassatu);
+
+            FlashSale item2 = r.createObject(FlashSale.class, 2);
+            item2.setNamaBarangFlashSale("Eco Tote Bag");
+            item2.setDetail("Tote bag ramah lingkungan");
+            item2.setHargaAwal("180000");
+            item2.setHargaDiskon("40000");
+            item2.setGambarProduk(R.drawable.tasdua);
+
+            FlashSale item3 = r.createObject(FlashSale.class, 3);
+            item3.setNamaBarangFlashSale("Canvas Bag Limited");
+            item3.setDetail("Tas kanvas edisi terbatas");
+            item3.setHargaAwal("300000");
+            item3.setHargaDiskon("20000");
+            item3.setGambarProduk(R.drawable.tas3);
+        });
+
         realm.close();
     }
+
 }

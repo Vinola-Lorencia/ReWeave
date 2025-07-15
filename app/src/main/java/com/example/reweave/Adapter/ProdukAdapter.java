@@ -185,7 +185,7 @@ public class ProdukAdapter extends ArrayAdapter<Produk> {
     }
 
     private static class ViewHolder {
-        ImageView imgProduk, imgKeranjang;
+        ImageView imgProduk;
         TextView txtNamaProduk, txtHargaProduk;
     }
 
