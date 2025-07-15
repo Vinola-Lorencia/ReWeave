@@ -85,7 +85,7 @@
 //        TextView txtNamaProduk, txtHargaProduk;
 //    }
 //
-//    // 🔍 Tampilkan hanya produk yang onSale = true
+//
 //    public void filterOnSaleOnly() {
 //        filteredProdukList.clear();
 //        for (Produk p : allProdukList) {
@@ -96,7 +96,7 @@
 //        notifyDataSetChanged();
 //    }
 //
-//    // 🔄 Tampilkan semua kembali
+//
 //    public void resetFilter() {
 //        filteredProdukList.clear();
 //        filteredProdukList.addAll(allProdukList);
