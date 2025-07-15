@@ -10,6 +10,7 @@ import android.widget.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.reweave.Model.Point;
 import com.example.reweave.Model.User;
 
 import io.realm.Realm;
@@ -89,6 +90,9 @@ public class RegisterActivity extends AppCompatActivity {
                     user.setEmail(email);
                     user.setPhone(phone);
                     user.setPassword(password);
+
+                    Point point = r.createObject(Point.class, email); // gunakan email sebagai primary key
+                    point.setPoints(2000);
                 });
 
                 // Simpan email ke SharedPreferences

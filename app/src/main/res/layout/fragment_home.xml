@@ -120,7 +120,7 @@
                     android:textSize="14dp" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/tv_point_home"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:fontFamily="@font/montserratboldc"

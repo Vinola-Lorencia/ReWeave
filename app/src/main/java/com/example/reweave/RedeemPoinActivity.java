@@ -1,5 +1,7 @@
 package com.example.reweave;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -9,41 +11,48 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import com.example.reweave.Model.Point;
+
+import io.realm.Realm;
+
 public class RedeemPoinActivity extends AppCompatActivity {
-    // Deklarasi variabel komponen antarmuka pengguna
-    private TextView tvPoints;
-    private TextView tvQuantity;
-    private TextView tvPromo;
-    private TextView tvTotalPoint;
+    private TextView tvPoints, tvQuantity, tvPromo, tvTotalPoint;
     private ImageView ivPromo;
-    private ImageButton btnMinus;
-    private ImageButton btnPlus;
+    private ImageButton btnMinus, btnPlus;
     private AppCompatButton btnRedeem;
 
-    // Variabel untuk menyimpan data promo yang akan ditukarkan
     private int quantity = 1;
     private String promoTitle;
     private int promoPoints;
     private int promoImage;
+
+    private Realm realm;
+    private String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redeem_poin);
 
-        // Mengambil data promo dari intent
+        // Init Realm
+        Realm.init(this);
+        realm = Realm.getDefaultInstance();
+
+        // Get user email from SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("user_session", MODE_PRIVATE);
+        userEmail = prefs.getString("user_email", "");
+
+        // Ambil data dari intent
         promoTitle = getIntent().getStringExtra("promo_title");
         promoPoints = getIntent().getIntExtra("promo_points", 0);
         promoImage = getIntent().getIntExtra("promo_image", 0);
 
-        // Inisialisasi komponen dan menyiapkan tampilan
         initializeViews();
         setupClickListeners();
         updateDisplay();
     }
 
     private void initializeViews() {
-        // Menghubungkan variabel dengan komponen pada layout
         tvPoints = findViewById(R.id.tv_point);
         tvQuantity = findViewById(R.id.tv_quantity);
         tvPromo = findViewById(R.id.tv_promo);
@@ -53,7 +62,6 @@ public class RedeemPoinActivity extends AppCompatActivity {
         btnRedeem = findViewById(R.id.btn_redeem);
         tvTotalPoint = findViewById(R.id.tv_total_point);
 
-        // Menginisialisasi tampilan dengan data promo
         tvPromo.setText(promoTitle);
         ivPromo.setImageResource(promoImage);
         tvPoints.setText(promoPoints + " Point");
@@ -61,10 +69,8 @@ public class RedeemPoinActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
-        // Implementasi tombol kembali
         findViewById(R.id.iv_back).setOnClickListener(v -> finish());
 
-        // Implementasi tombol pengurangan kuantitas
         btnMinus.setOnClickListener(v -> {
             if (quantity > 1) {
                 quantity--;
@@ -72,12 +78,10 @@ public class RedeemPoinActivity extends AppCompatActivity {
             }
         });
 
-        // Implementasi tombol penambahan kuantitas
         btnPlus.setOnClickListener(v -> {
             int totalPoints = promoPoints * (quantity + 1);
-            int currentPoints = ChangePoinActivity.getCurrentPoints(this);
+            int currentPoints = getCurrentPoints();
 
-            // Validasi kecukupan poin
             if (totalPoints <= currentPoints) {
                 quantity++;
                 updateDisplay();
@@ -86,40 +90,46 @@ public class RedeemPoinActivity extends AppCompatActivity {
             }
         });
 
-        // Implementasi tombol penukaran poin
         btnRedeem.setOnClickListener(v -> redeemPoints());
     }
 
     private void updateDisplay() {
-        // Memperbarui tampilan kuantitas
         tvQuantity.setText(String.valueOf(quantity));
         updatePointsDisplay();
     }
 
     private void updatePointsDisplay() {
-        // Memperbarui tampilan total poin
-        int currentPoints = ChangePoinActivity.getCurrentPoints(this);
+        int currentPoints = getCurrentPoints();
         tvTotalPoint.setText(currentPoints + " Points");
     }
 
+    private int getCurrentPoints() {
+        Point point = realm.where(Point.class).equalTo("email", userEmail).findFirst();
+        return point != null ? point.getPoints() : 0;
+    }
+
     private void redeemPoints() {
-        // Menghitung total poin yang diperlukan
         int totalPoints = promoPoints * quantity;
-        int currentPoints = ChangePoinActivity.getCurrentPoints(this);
+        int currentPoints = getCurrentPoints();
 
         if (totalPoints <= currentPoints) {
-            // Mengurangi poin pengguna setelah penukaran
-            int remainingPoints = currentPoints - totalPoints;
-            ChangePoinActivity.setPoints(this, remainingPoints);
+            realm.executeTransaction(r -> {
+                Point point = r.where(Point.class).equalTo("email", userEmail).findFirst();
+                if (point != null) {
+                    point.setPoints(point.getPoints() - totalPoints);
+                }
+            });
 
-            // Menampilkan notifikasi keberhasilan
-            Toast.makeText(this, "Berhasil menukar " + quantity + " " + promoTitle, Toast.LENGTH_SHORT).show();
-
-            // Menutup aktivitas setelah penukaran berhasil
+            Toast.makeText(this, "Congrats, You have redeem the point " + quantity + " " + promoTitle, Toast.LENGTH_SHORT).show();
             finish();
         } else {
-            // Menampilkan notifikasi kegagalan
-            Toast.makeText(this, "Poin tidak mencukupi", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Point isn't enough", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (realm != null) realm.close();
     }
 }

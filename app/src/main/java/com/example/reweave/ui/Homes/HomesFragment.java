@@ -24,11 +24,11 @@ import androidx.fragment.app.Fragment;
 import com.example.reweave.ChangePoinActivity;
 import com.example.reweave.FormulirDonasi;
 import com.example.reweave.MainUIActivity;
+import com.example.reweave.Model.Point;
 import com.example.reweave.Model.User;
 import com.example.reweave.NotificationActivity;
 import com.example.reweave.R;
-import com.example.reweave.RedeemPoinActivity;
-import com.example.reweave.RiwayatPoinActivity;
+
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -43,86 +43,72 @@ import io.realm.Realm;
 
 public class HomesFragment extends Fragment {
 
-    private TextView edtNama, txtLocation;
+    private TextView edtNama, txtLocation, tvPointHome;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
-    private ImageButton btnCollect,btnChange,btnot;
+    private ImageButton btnCollect, btnChange, btnot;
     private Button button, button1, button2;
+    private Realm realm;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         edtNama = root.findViewById(R.id.edtNama);
-        txtLocation = root.findViewById(R.id.location);// Pastikan TextView ini ada di layout kamu
+        txtLocation = root.findViewById(R.id.location);
+        tvPointHome = root.findViewById(R.id.tv_point_home);
         btnCollect = root.findViewById(R.id.btnCollect);
-        btnChange=root.findViewById(R.id.btnChange);
-        btnot=root.findViewById(R.id.imagenot);
+        btnChange = root.findViewById(R.id.btnChange);
+        btnot = root.findViewById(R.id.imagenot);
         button = root.findViewById(R.id.button);
         button1 = root.findViewById(R.id.button1);
         button2 = root.findViewById(R.id.button2);
 
+        Realm.init(requireContext());
+        realm = Realm.getDefaultInstance();
 
-        // Ambil dan tampilkan nama user dari Realm
         SharedPreferences preferences = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE);
         String email = preferences.getString("user_email", null);
 
         if (email != null) {
-            Realm realm = Realm.getDefaultInstance();
+            // Ambil nama user
             User user = realm.where(User.class).equalTo("email", email).findFirst();
             if (user != null) {
                 edtNama.setText(user.getName());
             }
+
+            // Ambil dan tampilkan poin user
+            Point point = realm.where(Point.class).equalTo("email", email).findFirst();
+            if (point != null) {
+                tvPointHome.setText(point.getPoints() + " Points");
+            } else {
+                tvPointHome.setText("0 Points");
+            }
         }
 
-        btnChange.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), ChangePoinActivity.class);
-            startActivity(intent);
-        });
+        // Navigasi tombol
+        btnChange.setOnClickListener(v -> startActivity(new Intent(requireContext(), ChangePoinActivity.class)));
+        btnCollect.setOnClickListener(v -> startActivity(new Intent(requireContext(), MainUIActivity.class)));
+        button.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
+        button1.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
+        button2.setOnClickListener(v -> startActivity(new Intent(requireContext(), FormulirDonasi.class)));
+        btnot.setOnClickListener(v -> startActivity(new Intent(requireContext(), NotificationActivity.class)));
 
-        btnCollect.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), MainUIActivity.class);
-            startActivity(intent);
-        });
-
-        button.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), FormulirDonasi.class);
-            startActivity(intent);
-        });
-
-
-        button1.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), FormulirDonasi.class);
-            startActivity(intent);
-        });
-
-        button2.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), FormulirDonasi.class);
-            startActivity(intent);
-        });
-
-        btnot.setOnClickListener(v ->{
-            Intent intent = new Intent(requireContext(), NotificationActivity.class);
-            startActivity(intent);
-        });
-
-        // Inisialisasi client GPS
+        // Inisialisasi GPS
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireContext());
 
-        // Cek dan minta izin lokasi
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(requireActivity(),
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     LOCATION_PERMISSION_REQUEST_CODE);
         } else {
-            getCurrentLocation(); // Kalau sudah diizinkan, langsung ambil lokasi
+            getCurrentLocation();
         }
 
         return root;
     }
 
-    // Ambil lokasi pengguna jika permission sudah diberikan
     private void getCurrentLocation() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED &&
@@ -153,7 +139,6 @@ public class HomesFragment extends Fragment {
         }
     }
 
-    // Convert koordinat jadi nama kota
     private void getCityName(double lat, double lon) {
         Geocoder geocoder = new Geocoder(requireContext(), Locale.getDefault());
         try {
@@ -165,5 +150,30 @@ public class HomesFragment extends Fragment {
         } catch (IOException e) {
             txtLocation.setText("Location error");
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Update poin setiap kali kembali ke HomeFragment
+        updatePointDisplay();
+    }
+
+    private void updatePointDisplay() {
+        SharedPreferences preferences = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE);
+        String email = preferences.getString("user_email", null);
+
+        if (email != null && realm != null && !realm.isClosed()) {
+            Point point = realm.where(Point.class).equalTo("email", email).findFirst();
+            if (point != null) {
+                tvPointHome.setText(point.getPoints() + " Points");
+            }
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (realm != null) realm.close();
     }
 }
