@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -14,17 +11,14 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reweave.Model.Donasi;
-import com.example.reweave.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 import io.realm.Realm;
 
-public class DonationActivity extends Fragment {
+public class DonationActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 101;
     private Uri selectedImageUri;
@@ -38,46 +32,42 @@ public class DonationActivity extends Fragment {
 
     private Realm realm;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_donate, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_donation);  // <- Harus layout Activity, bukan Fragment
 
-        Realm.init(requireContext());
+        Realm.init(this);
         realm = Realm.getDefaultInstance();
 
-        initViews(view);
+        initViews();
         setupDropdowns();
         setupUploadButton();
         setupSubmitButton();
-
-        return view;
     }
 
-    private void initViews(View view) {
-        inputFirst = view.findViewById(R.id.inputEditFirst);
-        inputLast = view.findViewById(R.id.inputEditLast);
-        inputEmail = view.findViewById(R.id.inputEditEmail);
-        inputPhone = view.findViewById(R.id.inputEditPhone);
-        inputType = view.findViewById(R.id.inputType);
-        inputColor = view.findViewById(R.id.inputSize);
-        inputSize = view.findViewById(R.id.inputSizw);
-        inputCall = view.findViewById(R.id.inputCall);
-        inputInfo = view.findViewById(R.id.inputInfo);
+    private void initViews() {
+        inputFirst = findViewById(R.id.inputEditFirst);
+        inputLast = findViewById(R.id.inputEditLast);
+        inputEmail = findViewById(R.id.inputEditEmail);
+        inputPhone = findViewById(R.id.inputEditPhone);
+        inputType = findViewById(R.id.inputType);
+        inputColor = findViewById(R.id.inputSize);
+        inputSize = findViewById(R.id.inputSizw);
+        inputCall = findViewById(R.id.inputCall);
+        inputInfo = findViewById(R.id.inputInfo);
 
-        dropdownOption1 = view.findViewById(R.id.dropdownOption1);
-        dropdownOption2 = view.findViewById(R.id.dropdownOption2);
-        dropdownOption3 = view.findViewById(R.id.dropdownOption3);
-        dropdownOption4 = view.findViewById(R.id.dropdownOption4);
-        dropdownOption5 = view.findViewById(R.id.dropdownOption5);
+        dropdownOption1 = findViewById(R.id.dropdownOption1);
+        dropdownOption2 = findViewById(R.id.dropdownOption2);
+        dropdownOption3 = findViewById(R.id.dropdownOption3);
+        dropdownOption4 = findViewById(R.id.dropdownOption4);
+        dropdownOption5 = findViewById(R.id.dropdownOption5);
 
-        permissionContact = view.findViewById(R.id.permissioncontact);
-        uploadButton = view.findViewById(R.id.upload_button);
-        submitButton = view.findViewById(R.id.submit_button);
-        dragDropArea = view.findViewById(R.id.drag_drop_area);
-
-        imagePreview = new ImageView(requireContext());
-        ((ViewGroup) view).addView(imagePreview);
+        permissionContact = findViewById(R.id.permissioncontact);
+        uploadButton = findViewById(R.id.upload_button);
+        submitButton = findViewById(R.id.submit_button);
+        dragDropArea = findViewById(R.id.drag_drop_area);
+        imagePreview = new ImageView(this);
     }
 
     private void setupDropdowns() {
@@ -90,7 +80,7 @@ public class DonationActivity extends Fragment {
 
     private void setDropdownAdapter(AutoCompleteTextView dropdown, int arrayRes) {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                requireContext(), arrayRes, android.R.layout.simple_dropdown_item_1line);
+                this, arrayRes, android.R.layout.simple_dropdown_item_1line);
         dropdown.setAdapter(adapter);
     }
 
@@ -103,7 +93,7 @@ public class DonationActivity extends Fragment {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
             selectedImageUri = data.getData();
@@ -133,12 +123,12 @@ public class DonationActivity extends Fragment {
                 donasi.setPermission(permissionContact.isChecked());
                 donasi.setPhotoUri(selectedImageUri != null ? selectedImageUri.toString() : "");
             });
+            finish();
         });
     }
 
-
     @Override
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         if (realm != null) realm.close();
     }

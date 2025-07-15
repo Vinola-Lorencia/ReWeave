@@ -6,13 +6,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class DetailKomunitasActivity extends AppCompatActivity {
 
@@ -26,6 +21,7 @@ public class DetailKomunitasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_komunitas);
 
+        // Inisialisasi komponen UI
         backButton = findViewById(R.id.button_back);
         imageKomunitas = findViewById(R.id.image_komunitas);
         namaKomunitas = findViewById(R.id.text_nama_komunitas);
@@ -35,19 +31,23 @@ public class DetailKomunitasActivity extends AppCompatActivity {
         listJenisPakaian = findViewById(R.id.list_jenis_pakaian);
         donasiSekarangButton = findViewById(R.id.button_donasi_sekarang);
 
+        // Tombol kembali
         backButton.setOnClickListener(view -> finish());
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            namaKomunitas.setText(intent.getStringExtra("namaKomunitas"));
-            alamat.setText("Alamat: " + intent.getStringExtra("alamat"));
-            kontak.setText("Kontak: " + intent.getStringExtra("kontak"));
-            jamBuka.setText("Jam Buka: " + intent.getStringExtra("jamBuka"));
-            listJenisPakaian.setText(intent.getStringExtra("jenisPakaian"));
+        // Ambil data dari Intent
+        Intent receivedIntent = getIntent();
+        if (receivedIntent != null) {
+            namaKomunitas.setText(receivedIntent.getStringExtra("namaKomunitas"));
+            alamat.setText("Alamat: " + receivedIntent.getStringExtra("alamat"));
+            kontak.setText("Kontak: " + receivedIntent.getStringExtra("kontak"));
+            jamBuka.setText("Jam Buka: " + receivedIntent.getStringExtra("jamBuka"));
+            listJenisPakaian.setText(receivedIntent.getStringExtra("jenisPakaian"));
         }
 
-        donasiSekarangButton.setOnClickListener(v ->
-                Toast.makeText(this, "Menuju halaman donasi...", Toast.LENGTH_SHORT).show()
-        );
+        // Aksi tombol "Donasi Sekarang"
+        donasiSekarangButton.setOnClickListener(v -> {
+            Intent donationIntent = new Intent(DetailKomunitasActivity.this, DonationActivity.class);
+            startActivity(donationIntent);
+        });
     }
 }
