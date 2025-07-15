@@ -116,26 +116,39 @@ public class RedeemPoinActivity extends AppCompatActivity {
 
         if (totalPoints <= currentPoints) {
             realm.executeTransaction(r -> {
+                // Kurangi poin
                 Point point = r.where(Point.class).equalTo("email", userEmail).findFirst();
                 if (point != null) {
                     point.setPoints(point.getPoints() - totalPoints);
                 }
 
-                // Simpan ke Riwayat Penukaran
+                // Simpan ke riwayat
                 RedeemHistory history = r.createObject(RedeemHistory.class, System.currentTimeMillis());
                 history.setEmail(userEmail);
                 history.setTitle(promoTitle);
                 history.setQuantity(quantity);
                 history.setTotalPoints(totalPoints);
-                // Optional: Tambahkan tanggal penukaran jika model mendukung
+
+                // Simpan ke notifikasi
+                com.example.reweave.Model.PoinNotification notif = r.createObject(
+                        com.example.reweave.Model.PoinNotification.class,
+                        java.util.UUID.randomUUID().toString()
+                );
+                notif.setEmail(userEmail);
+                notif.setPromoTitle(promoTitle);
+                notif.setPointsRedeemed(totalPoints);
+                notif.setDate(new java.util.Date());
             });
 
+            // Setelah sukses transaksi Realm
             Toast.makeText(this, "Congrats, You have redeemed " + quantity + "x " + promoTitle, Toast.LENGTH_SHORT).show();
             finish();
         } else {
+            // Poin tidak cukup
             Toast.makeText(this, "Point isn't enough", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     @Override
     protected void onDestroy() {

@@ -9,39 +9,49 @@
     tools:context=".NotificationActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"
-        android:padding="25dp">
+        android:paddingLeft="25dp"
+        android:paddingBottom="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="150dp">
 
+        <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="#FFFFFF"
-                app:srcCompat="@drawable/ic_arrow_back" />
+                android:backgroundTint="@android:color/transparent"
+                android:background="@null"
+                android:src="@drawable/ic_arrow_back" />
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="314dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserratboldc"
-                android:gravity="center_horizontal"
+                android:layout_marginStart="16dp"
                 android:text="Notification"
                 android:textColor="#070000"
-                android:textSize="16dp"/>
+                android:textSize="20sp"
+                android:fontFamily="@font/montserratboldc" />
         </LinearLayout>
 
+        <!-- ListView -->
         <ListView
+            android:id="@+id/listviewnotif"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

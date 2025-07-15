@@ -1,34 +1,45 @@
 package com.example.reweave;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.reweave.Adapter.PoinNotificationAdapter;
+import com.example.reweave.Model.PoinNotification;
+
+import io.realm.Realm;
+import io.realm.RealmResults;
+import io.realm.Sort;
 
 public class NotificationActivity extends AppCompatActivity {
+
+    private ListView listView;
+    private PoinNotificationAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_notification);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        Realm.init(this);
+        listView = findViewById(R.id.listviewnotif);
+
+        SharedPreferences prefs = getSharedPreferences("user_session", MODE_PRIVATE);
+        String userEmail = prefs.getString("user_email", "");
+
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<PoinNotification> data = realm.where(PoinNotification.class)
+                .equalTo("email", userEmail)
+                .sort("date", Sort.DESCENDING)
+                .findAll();
+
+        adapter = new PoinNotificationAdapter(this, data);
+        listView.setAdapter(adapter);
 
         ImageButton backButton = findViewById(R.id.imageButton2);
-        backButton.setOnClickListener(v -> {
-            Intent intent = new Intent(NotificationActivity.this, MainUIActivity.class);
-            intent.putExtra("navigate_to", "home"); // kasih sinyal ke MainUIActivity
-            startActivity(intent);
-            finish();
-        });
+        backButton.setOnClickListener(v -> finish());
     }
 }
