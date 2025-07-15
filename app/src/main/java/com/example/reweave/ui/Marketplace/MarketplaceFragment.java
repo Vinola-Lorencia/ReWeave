@@ -1,12 +1,16 @@
 package com.example.reweave.ui.Marketplace;
 
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,8 +18,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.reweave.Adapter.FlashSaleAdapter;
+import com.example.reweave.KeranjangActivity;
 import com.example.reweave.Model.FlashSale;
 import com.example.reweave.R;
+import com.example.reweave.TampilanProdukActivity;
 
 import java.util.ArrayList;
 
@@ -25,7 +31,11 @@ import io.realm.RealmResults;
 public class MarketplaceFragment extends Fragment {
 
     ListView listViewFlashSale;
+    ImageView imagekeranjang;
+
+
     ArrayList<FlashSale> FlashSaleArrayList;
+    CardView crdfashion, crdhat, crdtototebag, crddecor, crdseeall;
     FlashSaleAdapter adapter;
     private MarketplaceViewModel mViewModel;
 
@@ -40,6 +50,46 @@ public class MarketplaceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_marketplace, container, false);
         listViewFlashSale = view.findViewById(R.id.listViewFlashSale);
 
+        crdfashion = view.findViewById(R.id.crdfashion);
+        crdhat = view.findViewById(R.id.crdhat);
+        crdtototebag = view.findViewById(R.id.crdtototebag);
+        crddecor = view.findViewById(R.id.crddecor);
+        crdseeall = view.findViewById(R.id.crdseelall);
+        imagekeranjang = view.findViewById(R.id.imagekeranjang);
+
+
+
+        crdfashion.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "fashion");
+            startActivity(intent);
+        });
+
+        crdhat.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "hat");
+            startActivity(intent);
+        });
+
+        crdtototebag.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "totebag");
+            startActivity(intent);
+        });
+
+        crddecor.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            intent.putExtra("kategori", "decor");
+            startActivity(intent);
+        });
+
+        imagekeranjang.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), KeranjangActivity.class);
+
+            startActivity(intent);
+        });
+
+
         tambahDataDummyFlashSale(); // Tambah data dummy sekali
         FlashSaleArrayList = getAllProduk();
 
@@ -50,6 +100,10 @@ public class MarketplaceFragment extends Fragment {
             Toast.makeText(requireContext(),
                     "Dipilih: " + adapter.getItem(position).getNamaBarangFlashSale(),
                     Toast.LENGTH_SHORT).show();
+        });
+        crdseeall.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TampilanProdukActivity.class);
+            startActivity(intent);
         });
 
         return view;
@@ -76,7 +130,7 @@ public class MarketplaceFragment extends Fragment {
                 item1.setDetail("Tas berbahan denim daur ulang");
                 item1.setHargaAwal("250000");
                 item1.setHargaDiskon("150000");
-                item1.setGambarProduk(R.drawable.tassatu);
+                item1.setGambarProduk(R.drawable.t3);
 
                 FlashSale item2 = realm.createObject(FlashSale.class, 2);
                 item2.setNamaBarangFlashSale("Eco Tote Bag");

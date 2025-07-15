@@ -125,7 +125,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txtRegister"
                 android:layout_width="121dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

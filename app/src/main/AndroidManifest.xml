@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.reweave">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name=".Reweave"
         android:allowBackup="true"
@@ -14,67 +17,83 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reweave"
         tools:targetApi="31">
+        <activity
+            android:name=".ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailProdukActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TampilanProdukActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KeranjangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckOutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckOutCartActivity"
+            android:exported="false" />
 
-        <!-- SplashScreen (paling pertama dijalankan) -->
+        <activity
+            android:name=".ChangePhotoActivity"
+            android:exported="false" /> <!-- Splash screen atau launcher pertama -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MySplashscreen"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MySplashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Setelah SplashScreen, user masuk ke Intro -->
+        </activity> <!-- Tambahan activity yang diperlukan -->
         <activity
             android:name=".IntroActivity"
-            android:exported="false" />
-
-        <!-- Login screen setelah Intro -->
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
-
-        <!-- Register screen dari LoginActivity -->
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
-
-        <!-- Main UI (dengan BottomNavigation + Fragment) -->
+            android:exported="true" />
         <activity
             android:name=".MainUIActivity"
-            android:exported="false" />
-
-        <!-- Aktivitas tambahan lainnya (boleh kamu sesuaikan) -->
+            android:exported="true" />
         <activity
             android:name=".RiwayatPoinActivity"
             android:exported="false" />
-
-        <!-- Donasi & Notifikasi punya intent-filter (boleh disesuaikan) -->
+        <activity
+            android:name=".ChangePoinActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Point" />
+        <activity
+            android:name=".RedeemPoinActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Point" /> <!-- <activity android:name=".PenukaranPoinBerhasilActivity" android:exported="false" /> -->
         <activity
             android:name=".RiwayatDonasiActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".NotificationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <!-- Font metadata (jika kamu pakai preloaded_fonts) -->
+        </activity> <!-- Metadata font -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
+
 </manifest>

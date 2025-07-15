@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    tools:context=".DetailProdukActivity">>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Gambar Produk -->
+        <ImageView
+            android:id="@+id/imgProdukDetail"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tp5"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Nama Produk -->
+        <TextView
+            android:id="@+id/txtNamaProdukDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tas lipat Ziptote"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="#000000" />
+
+        <!-- Harga -->
+        <TextView
+            android:id="@+id/txtHargaProdukDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IDR 200K"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textColor="@color/purple_200"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Rating -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ 4.2"
+                android:textColor="#000000"
+                android:background="@drawable/bg_rating"
+                android:padding="6dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👍 3.8"
+                android:textColor="#000000"
+                android:background="@drawable/bg_rating"
+                android:fontFamily="@font/montserrat"
+                android:padding="6dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="132 Reviews"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#777777"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Warna -->
+
+
+        <!-- Deskripsi -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/txtDetailProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This foldable ziptote is made from upcycled textile waste..."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Add to cart dan Buy Now -->
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnMinus"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtQuantity"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginHorizontal="8dp" />
+
+            <Button
+                android:id="@+id/btnPlus"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+"
+                android:textSize="20sp"
+                android:layout_marginEnd="16dp" />
+
+            <Button
+                android:id="@+id/btnBuyNow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Buy now"
+                android:backgroundTint="#04AD4E"
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/btnkeranjang"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+
+                android:src="@drawable/b"
+                android:scaleType="centerInside" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
