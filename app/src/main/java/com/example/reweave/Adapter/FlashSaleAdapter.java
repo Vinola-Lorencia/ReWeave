@@ -1,6 +1,7 @@
 package com.example.reweave.Adapter;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,8 @@ public class FlashSaleAdapter extends ArrayAdapter<FlashSale> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
         FlashSale flashsale = getItem(position);
+
+
         final View result;
         MyViewHolder myViewHolder;
 
@@ -55,8 +58,9 @@ public class FlashSaleAdapter extends ArrayAdapter<FlashSale> {
         myViewHolder.imvProduk.setImageResource(flashsale.getGambarProduk());
         myViewHolder.txvnamaProdukFlashSale.setText( flashsale.getNamaBarangFlashSale());
         myViewHolder.txvDetail.setText(flashsale.getDetail());
-        myViewHolder.harga_awal.setText(flashsale.getHargaAwal());
-        myViewHolder.harga_diskon.setText(flashsale.getHargaDiskon());
+        myViewHolder.harga_awal.setText("Rp" + flashsale.getHargaAwal());
+        myViewHolder.harga_awal.setPaintFlags(myViewHolder.harga_awal.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        myViewHolder.harga_diskon.setText("Rp" + flashsale.getHargaDiskon());
         return result;
     }
 }

@@ -1,25 +1,38 @@
 package com.example.reweave;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.reweave.Model.Keranjang;
+
+import java.util.UUID;
+
+import io.realm.Realm;
+
 public class DetailProdukActivity extends AppCompatActivity {
 
-    ImageView imgProdukDetail;
+    ImageView imgProdukDetail, btnKeranjang;
     TextView txtNamaProdukDetail, txtHargaProdukDetail, txtDetailProduk;
-    TextView txtQuantity, txtRating, txtLike;
+    TextView txtQuantity;
     Button btnMinus, btnPlus, btnBuyNow;
 
     int quantity = 1;
+    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_produk);
+
+        // Inisialisasi Realm
+        Realm.init(this);
+        realm = Realm.getDefaultInstance();
 
         // Inisialisasi view
         imgProdukDetail = findViewById(R.id.imgProdukDetail);
@@ -30,17 +43,12 @@ public class DetailProdukActivity extends AppCompatActivity {
         btnMinus = findViewById(R.id.btnMinus);
         btnPlus = findViewById(R.id.btnPlus);
         btnBuyNow = findViewById(R.id.btnBuyNow);
-
-        // Tambahkan rating dan like secara dinamis jika ingin
-        txtRating = new TextView(this);
-        txtLike = new TextView(this);
+        btnKeranjang = findViewById(R.id.btnkeranjang);
 
         // Ambil data dari Intent
         int gambar = getIntent().getIntExtra("gambar", R.drawable.tp5);
         String nama = getIntent().getStringExtra("nama");
         int harga = getIntent().getIntExtra("harga", 0);
-        double rating = getIntent().getDoubleExtra("rating", 0.0);
-        double like = getIntent().getDoubleExtra("like", 0.0);
         String detail = getIntent().getStringExtra("detail");
 
         // Set ke tampilan
@@ -48,9 +56,7 @@ public class DetailProdukActivity extends AppCompatActivity {
         txtNamaProdukDetail.setText(nama);
         txtHargaProdukDetail.setText("Rp " + harga);
         txtDetailProduk.setText(detail);
-
-        // Perbarui rating dan like jika kamu mau tampilkan dinamis
-        // (bisa tambahkan TextView khusus jika mau ditaruh di layout)
+        txtQuantity.setText(String.valueOf(quantity));
 
         // Aksi tombol plus
         btnPlus.setOnClickListener(v -> {
@@ -66,11 +72,40 @@ public class DetailProdukActivity extends AppCompatActivity {
             }
         });
 
-        // Aksi tombol Buy Now
+        // Aksi tombol Buy Now => Ke halaman checkout
         btnBuyNow.setOnClickListener(v -> {
-            // Bisa tambahkan aksi checkout atau simpan ke keranjang
-            // Contoh:
-            // Toast.makeText(this, "Membeli " + quantity + "x " + nama, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(DetailProdukActivity.this, CheckOutActivity.class); // FIX: Nama class CheckoutActivity harus sesuai nama file .java
+            intent.putExtra("tipe", "produk");
+            intent.putExtra("nama", nama);
+            intent.putExtra("harga", harga);
+            intent.putExtra("gambarResId", gambar);
+            intent.putExtra("kuantitas", quantity);
+            startActivity(intent);
         });
+
+        // Aksi tombol Tambahkan ke Keranjang
+        btnKeranjang.setOnClickListener(v -> {
+            realm.executeTransaction(r -> {
+                Keranjang keranjang = r.createObject(Keranjang.class, UUID.randomUUID().toString());
+                keranjang.setNamaProduk(nama);
+                keranjang.setHarga(harga);
+                keranjang.setGambar(gambar);
+                keranjang.setKuantitas(quantity);
+            });
+
+            Toast.makeText(this, "Ditambahkan ke keranjang", Toast.LENGTH_SHORT).show();
+
+            // Lanjut ke halaman keranjang
+            Intent intent = new Intent(DetailProdukActivity.this, KeranjangActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (realm != null && !realm.isClosed()) {
+            realm.close();
+        }
     }
 }

@@ -146,6 +146,17 @@
                 android:backgroundTint="#04AD4E"
                 android:textColor="#FFFFFF" />
 
+            <ImageView
+                android:id="@+id/btnkeranjang"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+
+                android:src="@drawable/b"
+                android:scaleType="centerInside" />
+
 
         </LinearLayout>
     </LinearLayout>

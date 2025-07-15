@@ -215,65 +215,101 @@
 
         <!-- Spinners -->
 
-        <Spinner
-            android:id="@+id/clothes_condition"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="What is the color of the clothes?" />
 
-        <Spinner
-            android:id="@+id/clothes_type"
+        <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:helperTextTextColor="#009521">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/clothes_fabric"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="What is the size of the Clothes?" />
 
-        <EditText
-            android:id="@+id/clothes_color"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="378dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:helperTextTextColor="#009521">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputSizw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Clothes Color"
-            android:inputType="text"
-            android:textColor="#000000"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="How many years have the Clothes been worn?" />
 
-        <Spinner
-            android:id="@+id/clothes_size"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+            android:layout_weight="1"
+            android:hint="    Please Select"
+            app:helperTextTextColor="#009521">
 
-        <EditText
-            android:id="@+id/clothes_age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="How many years have the clothes been worn?"
-            android:inputType="number"
-            android:textColor="#000000"
-            android:layout_marginBottom="12dp" />
+            <AutoCompleteTextView
+                android:id="@+id/dropdownOption3"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:focusable="false"
+                android:inputType="none"
+                android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Contact Permission -->
+
         <CheckBox
-            android:id="@+id/permission_contact"
+            android:id="@+id/permissioncontact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Do you have permission to contact you about the clothes?"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginTop="12dp"/>
 
-        <!-- Preferred Call Time -->
-        <EditText
-            android:id="@+id/preferred_call_time"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="When would you like to be called?"
-            android:inputType="datetime"
-            android:textColor="#000000"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="10dp"
+            android:text="When would you like to be called?" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="378dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:helperTextTextColor="#009521">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputCall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Upload -->
         <TextView
@@ -301,15 +337,74 @@
             android:gravity="center"
             android:layout_marginBottom="12dp" />
 
-        <!-- Extra Info -->
-        <EditText
-            android:id="@+id/extra_info"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Is there any information that you would like to add?"
-            android:inputType="textMultiLine"
-            android:textColor="#000000"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="10dp"
+            android:text="Is there any information that you would like to add?" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="378dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:helperTextTextColor="#009521">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="How many years have the Clothes been worn?" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="    Please Select"
+            app:helperTextTextColor="#009521">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdownOption4"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:focusable="false"
+                android:inputType="none"
+                android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Who do you want to donate to?" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="    Please Select"
+            app:helperTextTextColor="#009521">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdownOption5"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:focusable="false"
+                android:inputType="none"
+                android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/submit_button"

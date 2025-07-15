@@ -50,12 +50,7 @@
                 android:textColor="#04AD4E"
                 android:textSize="14sp" />
 
-            <ImageView
-                android:id="@+id/imgKeranjang"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/shopping"
-                 />
+
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

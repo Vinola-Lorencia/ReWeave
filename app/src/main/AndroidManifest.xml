@@ -21,6 +21,22 @@
             android:name=".ForgetPasswordActivity"
             android:exported="false" />
         <activity
+            android:name=".DetailProdukActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TampilanProdukActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KeranjangActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckOutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckOutCartActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ChangePhotoActivity"
             android:exported="false" /> <!-- Splash screen atau launcher pertama -->
         <activity

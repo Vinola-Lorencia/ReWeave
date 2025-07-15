@@ -45,8 +45,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rp250.000"
+
             android:textSize="16sp"
-            android:textColor="#888888"/>
+            android:textColor="@color/red"/>
 
         <TextView
             android:id="@+id/harga_diskon"
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="Rp150.000"
             android:textSize="16sp"
-            android:textColor="#000000"
+            android:textColor="@color/purple_200"
             android:layout_marginEnd="8dp" />
 
 
