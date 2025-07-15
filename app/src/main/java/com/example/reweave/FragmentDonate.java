@@ -27,6 +27,8 @@ public class FragmentDonate extends Fragment {
     private EditText searchEditText;
     private Map<String, View> komunitasCards;
 
+    private Button btna,btnb,btnc,btnd,btne,btnf;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -35,8 +37,21 @@ public class FragmentDonate extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_donate, container, false);
         searchEditText = view.findViewById(R.id.edit_search);
+        btna=view.findViewById(R.id.btn_join_komunitas_a);
+        btnb=view.findViewById(R.id.btn_join_komunitas_b);
+        btnc=view.findViewById(R.id.btn_join_komunitas_c);
+        btnd=view.findViewById(R.id.btn_join_komunitas_d);
+        btne=view.findViewById(R.id.btn_join_komunitas_e);
+        btnf=view.findViewById(R.id.btn_join_komunitas_f);
 
         komunitasCards = new HashMap<>();
+
+        btna. setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
+        btnb. setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
+        btnc. setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
+        btnd. setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
+        btne. setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
+        btnf. setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
 
         // Hubungkan id Card Layout
         komunitasCards.put("komunitas a", view.findViewById(R.id.card_komunitas_a));
