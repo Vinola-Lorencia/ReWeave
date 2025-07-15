@@ -41,7 +41,7 @@ public class DonationActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_formulir_donasi, container, false);
+        View view = inflater.inflate(R.layout.fragment_donate, container, false);
 
         Realm.init(requireContext());
         realm = Realm.getDefaultInstance();
