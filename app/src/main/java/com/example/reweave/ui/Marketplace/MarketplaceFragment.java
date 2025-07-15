@@ -91,7 +91,7 @@ public class MarketplaceFragment extends Fragment {
         });
 
 
-        tambahDataDummyFlashSale(); // Tambah data dummy sekali
+        tambahDataDummyFlashSale();
         FlashSaleArrayList = getAllProduk();
 
         adapter = new FlashSaleAdapter(FlashSaleArrayList, requireContext());
@@ -158,6 +158,8 @@ public class MarketplaceFragment extends Fragment {
             item3.setHargaAwal("300000");
             item3.setHargaDiskon("20000");
             item3.setGambarProduk(R.drawable.tas3);
+
+
         });
 
         realm.close();
