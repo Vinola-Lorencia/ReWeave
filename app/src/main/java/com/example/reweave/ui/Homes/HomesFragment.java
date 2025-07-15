@@ -22,7 +22,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.reweave.ChangePoinActivity;
-import com.example.reweave.FormulirDonasi;
+import com.example.reweave.DonationActivity;
 import com.example.reweave.MainUIActivity;
 import com.example.reweave.Model.User;
 import com.example.reweave.NotificationActivity;
@@ -86,18 +86,18 @@ public class HomesFragment extends Fragment {
         });
 
         button.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), FormulirDonasi.class);
+            Intent intent = new Intent(requireContext(), DonationActivity.class);
             startActivity(intent);
         });
 
 
         button1.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), FormulirDonasi.class);
+            Intent intent = new Intent(requireContext(), DonationActivity.class);
             startActivity(intent);
         });
 
         button2.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), FormulirDonasi.class);
+            Intent intent = new Intent(requireContext(), DonationActivity.class);
             startActivity(intent);
         });
 
