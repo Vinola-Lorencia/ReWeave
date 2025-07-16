@@ -3,7 +3,6 @@ package com.example.reweave;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailKomunitasActivity extends AppCompatActivity {
 
-    private ImageButton backButton;
     private ImageView imageKomunitas;
     private TextView namaKomunitas, alamat, kontak, jamBuka, listJenisPakaian;
     private Button donasiSekarangButton;
@@ -27,7 +25,6 @@ public class DetailKomunitasActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        backButton = findViewById(R.id.button_back);
         imageKomunitas = findViewById(R.id.image_komunitas);
         namaKomunitas = findViewById(R.id.text_nama_komunitas);
         alamat = findViewById(R.id.text_alamat);
@@ -51,16 +48,10 @@ public class DetailKomunitasActivity extends AppCompatActivity {
             kontak.setText("Kontak: " + (kontakText != null ? kontakText : "-"));
             jamBuka.setText("Jam Buka: " + (jam != null ? jam : "-"));
             listJenisPakaian.setText(jenisPakaian != null ? jenisPakaian : "-");
-
-            // Opsional: jika nanti ingin mengirim image lewat intent
-            // String imageUrl = intent.getStringExtra("imageUrl");
-            // Glide.with(this).load(imageUrl).into(imageKomunitas);
         }
     }
 
     private void handleButtons() {
-        backButton.setOnClickListener(view -> finish());
-
         donasiSekarangButton.setOnClickListener(v -> {
             Intent donationIntent = new Intent(DetailKomunitasActivity.this, DonationActivity.class);
             startActivity(donationIntent);
