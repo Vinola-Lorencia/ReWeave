@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import io.realm.Realm;
 import io.realm.RealmResults;
 import com.example.reweave.Model.Point;
+import com.example.reweave.ui.Donate.DonateFragment;
 
 public class ChangePoinActivity extends AppCompatActivity {
     private TextView tvPoints;
@@ -49,7 +50,7 @@ public class ChangePoinActivity extends AppCompatActivity {
         });
 
         btnTambahPoin.setOnClickListener(v -> {
-            Intent intent = new Intent(ChangePoinActivity.this, MainUIActivity.class);
+            Intent intent = new Intent(ChangePoinActivity.this, DonateFragment.class);
             startActivity(intent);
         });
 
@@ -102,30 +103,6 @@ public class ChangePoinActivity extends AppCompatActivity {
         Point pointData = realm.where(Point.class).equalTo("email", email).findFirst();
         int currentPoints = pointData != null ? pointData.getPoints() : 0;
         tvPoints.setText(currentPoints + " Points");
-    }
-
-    public static int getCurrentPoints(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences("user_session", MODE_PRIVATE);
-        String email = prefs.getString("user_email", "");
-        Realm realm = Realm.getDefaultInstance();
-        Point pointData = realm.where(Point.class).equalTo("email", email).findFirst();
-        return pointData != null ? pointData.getPoints() : 0;
-    }
-
-    public static void setPoints(Context context, int points) {
-        SharedPreferences prefs = context.getSharedPreferences("user_session", MODE_PRIVATE);
-        String email = prefs.getString("user_email", "");
-        Realm realm = Realm.getDefaultInstance();
-        realm.executeTransaction(r -> {
-            Point pointData = r.where(Point.class).equalTo("email", email).findFirst();
-            if (pointData != null) {
-                pointData.setPoints(points);
-            } else {
-                Point newPoint = r.createObject(Point.class);
-                newPoint.setEmail(email);
-                newPoint.setPoints(points);
-            }
-        });
     }
 
     private String getUserEmail() {
