@@ -21,7 +21,12 @@ public class DetailKomunitasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_komunitas);
 
-        // Inisialisasi komponen UI
+        initViews();
+        handleIntent();
+        handleButtons();
+    }
+
+    private void initViews() {
         backButton = findViewById(R.id.button_back);
         imageKomunitas = findViewById(R.id.image_komunitas);
         namaKomunitas = findViewById(R.id.text_nama_komunitas);
@@ -30,21 +35,32 @@ public class DetailKomunitasActivity extends AppCompatActivity {
         jamBuka = findViewById(R.id.text_jam_buka);
         listJenisPakaian = findViewById(R.id.list_jenis_pakaian);
         donasiSekarangButton = findViewById(R.id.button_donasi_sekarang);
+    }
 
-        // Tombol kembali
+    private void handleIntent() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            String nama = intent.getStringExtra("namaKomunitas");
+            String alamatText = intent.getStringExtra("alamat");
+            String kontakText = intent.getStringExtra("kontak");
+            String jam = intent.getStringExtra("jamBuka");
+            String jenisPakaian = intent.getStringExtra("jenisPakaian");
+
+            namaKomunitas.setText(nama != null ? nama : "Nama Komunitas Tidak Ada");
+            alamat.setText("Alamat: " + (alamatText != null ? alamatText : "-"));
+            kontak.setText("Kontak: " + (kontakText != null ? kontakText : "-"));
+            jamBuka.setText("Jam Buka: " + (jam != null ? jam : "-"));
+            listJenisPakaian.setText(jenisPakaian != null ? jenisPakaian : "-");
+
+            // Opsional: jika nanti ingin mengirim image lewat intent
+            // String imageUrl = intent.getStringExtra("imageUrl");
+            // Glide.with(this).load(imageUrl).into(imageKomunitas);
+        }
+    }
+
+    private void handleButtons() {
         backButton.setOnClickListener(view -> finish());
 
-        // Ambil data dari Intent
-        Intent receivedIntent = getIntent();
-        if (receivedIntent != null) {
-            namaKomunitas.setText(receivedIntent.getStringExtra("namaKomunitas"));
-            alamat.setText("Alamat: " + receivedIntent.getStringExtra("alamat"));
-            kontak.setText("Kontak: " + receivedIntent.getStringExtra("kontak"));
-            jamBuka.setText("Jam Buka: " + receivedIntent.getStringExtra("jamBuka"));
-            listJenisPakaian.setText(receivedIntent.getStringExtra("jenisPakaian"));
-        }
-
-        // Aksi tombol "Donasi Sekarang"
         donasiSekarangButton.setOnClickListener(v -> {
             Intent donationIntent = new Intent(DetailKomunitasActivity.this, DonationActivity.class);
             startActivity(donationIntent);

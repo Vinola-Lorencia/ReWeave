@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.Donate.DonateFragment">
 
     <LinearLayout
         android:orientation="vertical"
@@ -62,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        tools:src="@drawable/community"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_a"
@@ -105,7 +106,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        tools:src="@drawable/communitytwo"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_b"
@@ -147,7 +148,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        tools:src="@drawable/communitythree"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_c"
@@ -190,7 +191,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        tools:src="@drawable/communityfour"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_d"
@@ -233,7 +234,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        tools:src="@drawable/communityfive"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_e"
@@ -275,7 +276,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        tools:src="@drawable/communitysix"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_f"
