@@ -18,8 +18,8 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Donation Form"
-            android:layout_marginTop="110dp"
+            android:text="Communities"
+            android:layout_marginTop="30dp"
             android:textSize="11pt"
             android:textStyle="bold"
             android:layout_marginBottom="20sp"/>
@@ -33,7 +33,7 @@
             android:drawableStart="@android:drawable/ic_menu_search"
             android:padding="12dp"
             android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="30dp"/>
 
         <!-- Grid Komunitas -->
         <GridLayout
@@ -64,7 +64,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/communityone"/>
+                        android:src="@drawable/community"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_a"
@@ -107,7 +107,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/communitytwo"/>
+                        android:src="@drawable/communitytwo"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_b"
@@ -149,7 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/communitythree"/>
+                        android:src="@drawable/communitythree"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_c"
@@ -192,7 +192,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/communityfour"/>
+                        android:src="@drawable/communityfour"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_d"
@@ -235,7 +235,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/communityfive"/>
+                        android:src="@drawable/communityfive"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_e"
@@ -277,7 +277,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@drawable/communitysix"/>
+                        android:src="@drawable/communitysix"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_f"
