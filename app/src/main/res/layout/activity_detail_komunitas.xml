@@ -28,14 +28,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="80dp">
 
                 <ImageView
                     android:id="@+id/image_komunitas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/communityone" />
+                    android:src="@drawable/communityone" />
 
                 <TextView
                     android:id="@+id/text_nama_komunitas"

@@ -42,12 +42,17 @@ public class DetailKomunitasActivity extends AppCompatActivity {
             String kontakText = intent.getStringExtra("kontak");
             String jam = intent.getStringExtra("jamBuka");
             String jenisPakaian = intent.getStringExtra("jenisPakaian");
+            int imageResId = intent.getIntExtra("imageResId", -1); // ambil gambar
 
             namaKomunitas.setText(nama != null ? nama : "Nama Komunitas Tidak Ada");
             alamat.setText("Alamat: " + (alamatText != null ? alamatText : "-"));
             kontak.setText("Kontak: " + (kontakText != null ? kontakText : "-"));
             jamBuka.setText("Jam Buka: " + (jam != null ? jam : "-"));
             listJenisPakaian.setText(jenisPakaian != null ? jenisPakaian : "-");
+
+            if (imageResId != -1) {
+                imageKomunitas.setImageResource(imageResId); // tampilkan gambar
+            }
         }
     }
 

@@ -41,19 +41,20 @@ public class DonateFragment extends Fragment {
         komunitasCards.put("komunitas f", view.findViewById(R.id.card_komunitas_f));
 
         // Setup tombol join per komunitas
-        setupJoin(view, R.id.btn_join_komunitas_a, "Komunitas A", "Jl. Mawar No.1", "0811111111", "08:00 - 16:00", "• Baju Anak\n• Jaket\n• Celana");
-        setupJoin(view, R.id.btn_join_komunitas_b, "Komunitas B", "Jl. Melati No.2", "0822222222", "09:00 - 17:00", "• Baju Dewasa\n• Sepatu");
-        setupJoin(view, R.id.btn_join_komunitas_c, "Komunitas C", "Jl. Anggrek No.3", "0833333333", "07:00 - 15:00", "• Jaket\n• Celana\n• Sepatu");
-        setupJoin(view, R.id.btn_join_komunitas_d, "Komunitas D", "Jl. Kenanga No.4", "0844444444", "10:00 - 18:00", "• Semua Jenis Pakaian");
-        setupJoin(view, R.id.btn_join_komunitas_e, "Komunitas E", "Jl. Dahlia No.5", "0855555555", "11:00 - 19:00", "• Baju Anak\n• Baju Dewasa");
-        setupJoin(view, R.id.btn_join_komunitas_f, "Komunitas F", "Jl. Sakura No.6", "0866666666", "08:00 - 17:00", "• Baju Dewasa\n• Jaket\n• Sepatu");
+        setupJoin(view, R.id.btn_join_komunitas_a, "Komunitas A", "Jl. Mawar No.1", "0811111111", "08:00 - 16:00", "• Baju Anak\n• Jaket\n• Celana", R.drawable.community);
+        setupJoin(view, R.id.btn_join_komunitas_b, "Komunitas B", "Jl. Melati No.2", "0822222222", "09:00 - 17:00", "• Baju Dewasa\n• Sepatu", R.drawable.communitytwo);
+        setupJoin(view, R.id.btn_join_komunitas_c, "Komunitas C", "Jl. Anggrek No.3", "0833333333", "07:00 - 15:00", "• Jaket\n• Celana\n• Sepatu", R.drawable.communitythree);
+        setupJoin(view, R.id.btn_join_komunitas_d, "Komunitas D", "Jl. Kenanga No.4", "0844444444", "10:00 - 18:00", "• Semua Jenis Pakaian", R.drawable.communityfour);
+        setupJoin(view, R.id.btn_join_komunitas_e, "Komunitas E", "Jl. Dahlia No.5", "0855555555", "11:00 - 19:00", "• Baju Anak\n• Baju Dewasa", R.drawable.communityfive);
+        setupJoin(view, R.id.btn_join_komunitas_f, "Komunitas F", "Jl. Sakura No.6", "0866666666", "08:00 - 17:00", "• Baju Dewasa\n• Jaket\n• Sepatu", R.drawable.communitysix);
 
         setupSearch();
 
         return view;
     }
 
-    private void setupJoin(View view, int btnId, String nama, String alamat, String kontak, String jam, String jenisPakaian) {
+
+    private void setupJoin(View view, int btnId, String nama, String alamat, String kontak, String jam, String jenisPakaian, int imageResId) {
         Button btn = view.findViewById(btnId);
         btn.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), DetailKomunitasActivity.class);
@@ -62,9 +63,11 @@ public class DonateFragment extends Fragment {
             intent.putExtra("kontak", kontak);
             intent.putExtra("jamBuka", jam);
             intent.putExtra("jenisPakaian", jenisPakaian);
+            intent.putExtra("imageResId", imageResId); // ini penting
             startActivity(intent);
         });
     }
+
 
     private void setupSearch() {
         searchEditText.addTextChangedListener(new TextWatcher() {
