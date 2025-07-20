@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DonationActivity">
 
     <LinearLayout
@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Donation Form"
+            android:fontFamily="@font/montserrat_extrabold"
             android:layout_marginTop="110dp"
             android:textSize="11pt"
             android:textStyle="bold"/>
@@ -25,10 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name"
+            android:fontFamily="@font/montserrat_medium"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp" />
 
-        <!-- First & Last Name -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,6 +47,8 @@
                     android:id="@+id/inputEditFirst"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/montserrat_medium"
                     android:textColor="#000000" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,11 +67,11 @@
                     android:id="@+id/inputEditLast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:fontFamily="@font/montserrat_medium"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-        <!-- Email & Phone -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,13 +86,15 @@
                 android:layout_weight="1"
                 android:hint="Email"
                 app:helperText="example@example.com"
+                android:fontFamily="@font/montserrat_medium"
                 app:helperTextTextColor="#009521">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputEditEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:fontFamily="@font/montserrat_medium"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -103,32 +108,34 @@
                 android:layout_weight="1"
                 android:hint="Phone Number"
                 app:helperText="Enter a valid number."
+                android:fontFamily="@font/montserrat_medium"
                 app:helperTextTextColor="#009521">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputEditPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:fontFamily="@font/montserrat_medium"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
-        <!-- Brand -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="What is the clothes' brand that you would like to donate?" />
+            android:text="What is the clothes' brand that you would like to donate?"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="378dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             app:helperText="ex: Prada, Burberry, Ralph Lauren, etc."
+            android:fontFamily="@font/montserrat_medium"
             app:helperTextTextColor="#009521">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -138,27 +145,24 @@
                 android:textColor="#000000" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView45"
-                android:layout_width="209dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:text="What is the condition of \n the clothes?" />
+                android:text="What is the condition of \n the clothes?"
+                android:fontFamily="@font/montserrat_medium"/>
 
             <TextView
-                android:id="@+id/textView53"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="10dp"
-                android:text="What is the type of the clothes?" />
+                android:text="What is the type of the clothes?"
+                android:fontFamily="@font/montserrat_medium"/>
         </LinearLayout>
 
         <LinearLayout
@@ -168,38 +172,32 @@
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal">
 
-
-            <!-- Dropdown 1 -->
-
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="    Please Select"
                 app:helperTextTextColor="#009521">
 
                 <AutoCompleteTextView
                     android:id="@+id/dropdownOption1"
                     android:layout_width="match_parent"
                     android:layout_height="53dp"
-                    android:textColor="#000000"
                     android:inputType="none"
-                    android:focusable="false" />
+
+                    android:textColor="#000000"
+                    android:fontFamily="@font/montserrat_medium"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
                 android:layout_width="16dp"
                 android:layout_height="wrap_content" />
 
-            <!-- Dropdown 2 -->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="    Please Select"
                 app:helperTextTextColor="#009521">
 
                 <AutoCompleteTextView
@@ -207,33 +205,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="53dp"
                     android:textColor="#000000"
-                    android:inputType="none"
-                    android:focusable="false" />
+                    android:fontFamily="@font/montserrat_medium"/>
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
 
-        <!-- Spinners -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="What is the color of the clothes?" />
+            android:text="What is the color of the clothes?"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="378dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             app:helperTextTextColor="#009521">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_medium"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -241,20 +237,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="What is the size of the Clothes?" />
+            android:text="What is the size of the Clothes?"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="378dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             app:helperTextTextColor="#009521">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputSizw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_medium"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -262,56 +259,53 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="How many years have the Clothes been worn?" />
+            android:text="How many years have the Clothes been worn?"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="    Please Select"
             app:helperTextTextColor="#009521">
 
             <AutoCompleteTextView
                 android:id="@+id/dropdownOption3"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
-                android:focusable="false"
-                android:inputType="none"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_medium"/>
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <CheckBox
             android:id="@+id/permissioncontact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Do you have permission to contact you about the clothes?"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
             android:layout_marginBottom="10dp"
-            android:text="When would you like to be called?" />
+            android:text="When would you like to be called?"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="378dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             app:helperTextTextColor="#009521">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputCall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_medium"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <!-- Upload -->
         <TextView
             android:id="@+id/upload_photos_label"
             android:layout_width="wrap_content"
@@ -319,7 +313,8 @@
             android:text="Please upload the photos of the clothes."
             android:textStyle="bold"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <Button
             android:id="@+id/upload_button"
@@ -327,7 +322,8 @@
             android:layout_height="wrap_content"
             android:text="Browse Files"
             android:layout_marginBottom="12dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <TextView
             android:id="@+id/drag_drop_area"
@@ -335,27 +331,29 @@
             android:layout_height="wrap_content"
             android:text="Drag and drop files here\nNo file chosen"
             android:gravity="center"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
             android:layout_marginBottom="10dp"
-            android:text="Is there any information that you would like to add?" />
+            android:text="Is there any information that you would like to add?"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="378dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             app:helperTextTextColor="#009521">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_medium"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -363,23 +361,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="How many years have the Clothes been worn?" />
+            android:text="How many years have the Clothes been worn?"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="    Please Select"
             app:helperTextTextColor="#009521">
 
             <AutoCompleteTextView
                 android:id="@+id/dropdownOption4"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
-                android:focusable="false"
-                android:inputType="none"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_medium"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -387,32 +383,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="Who do you want to donate to?" />
+            android:text="Who do you want to donate to?"
+            android:fontFamily="@font/montserrat_medium"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="380dp"
+        <Spinner
+            android:id="@+id/donation_targets"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="    Please Select"
-            app:helperTextTextColor="#009521">
-
-            <AutoCompleteTextView
-                android:id="@+id/dropdownOption5"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:focusable="false"
-                android:inputType="none"
-                android:textColor="#000000" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:backgroundTint="#009521"
+            android:spinnerMode="dropdown"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/montserrat_medium"/>
 
         <Button
             android:id="@+id/submit_button"
-            android:layout_width="wrap_content"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:text="Submit"
             android:layout_marginTop="16dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/montserrat_medium"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

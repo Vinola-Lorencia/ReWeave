@@ -3,21 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.Donate.DonateFragment">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_marginBottom="100dp">
 
         <!-- Judul -->
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Donation Form"
-            android:layout_marginTop="110dp"
+            android:text="Communities"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:layout_marginTop="50dp"
             android:textSize="11pt"
             android:textStyle="bold"
             android:layout_marginBottom="20sp"/>
@@ -28,10 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cari komunitas..."
+            android:fontFamily="@font/montserrat_medium"
             android:drawableStart="@android:drawable/ic_menu_search"
             android:padding="12dp"
             android:background="@android:drawable/editbox_background"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="30dp"/>
 
         <!-- Grid Komunitas -->
         <GridLayout
@@ -62,13 +66,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        android:src="@drawable/community"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Komunitas A"
+                        android:text="Pakaian Peduli"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
@@ -78,6 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Join"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"/>
 
@@ -105,13 +111,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        android:src="@drawable/communitytwo"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Komunitas B"
+                        android:text="Berbagi Hangat"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
@@ -121,6 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Join"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"/>
                 </LinearLayout>
@@ -147,13 +155,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        android:src="@drawable/communitythree"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_c"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Komunitas C"
+                        android:text="Komunitas Sandang"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
@@ -163,6 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Join"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"/>
 
@@ -190,13 +200,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        android:src="@drawable/communityfour"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_d"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Komunitas D"
+                        android:text="Hangat Sesama"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
@@ -206,6 +217,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Join"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"/>
 
@@ -233,13 +245,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        android:src="@drawable/communityfive"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_e"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Komunitas E"
+                        android:text="Wardrobe Amal"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
@@ -249,6 +262,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Join"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"/>
                 </LinearLayout>
@@ -275,13 +289,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
-                        tools:src="@tools:sample/avatars"/>
+                        android:src="@drawable/communitysix"/>
 
                     <TextView
                         android:id="@+id/text_komunitas_f"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Komunitas F"
+                        android:text="Gerakan Pakaian Layak"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"/>
@@ -291,6 +306,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Join"
+                        android:fontFamily="@font/montserrat_semibold"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"/>
 

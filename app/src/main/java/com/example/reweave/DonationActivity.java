@@ -1,22 +1,28 @@
 package com.example.reweave;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reweave.Model.Donasi;
+import com.example.reweave.Model.Point;
 import com.google.android.material.textfield.TextInputEditText;
 
 import io.realm.Realm;
+
 
 public class DonationActivity extends AppCompatActivity {
 
@@ -24,7 +30,7 @@ public class DonationActivity extends AppCompatActivity {
     private Uri selectedImageUri;
 
     private TextInputEditText inputFirst, inputLast, inputEmail, inputPhone, inputType, inputColor, inputSize, inputCall, inputInfo;
-    private AutoCompleteTextView dropdownOption1, dropdownOption2, dropdownOption3, dropdownOption4, dropdownOption5;
+    private Spinner donationTargetSpinner;
     private CheckBox permissionContact;
     private Button uploadButton, submitButton;
     private TextView dragDropArea;
@@ -35,13 +41,13 @@ public class DonationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donation);  // <- Harus layout Activity, bukan Fragment
+        setContentView(R.layout.activity_donation);
 
         Realm.init(this);
         realm = Realm.getDefaultInstance();
 
         initViews();
-        setupDropdowns();
+        setupSpinner();
         setupUploadButton();
         setupSubmitButton();
     }
@@ -57,12 +63,7 @@ public class DonationActivity extends AppCompatActivity {
         inputCall = findViewById(R.id.inputCall);
         inputInfo = findViewById(R.id.inputInfo);
 
-        dropdownOption1 = findViewById(R.id.dropdownOption1);
-        dropdownOption2 = findViewById(R.id.dropdownOption2);
-        dropdownOption3 = findViewById(R.id.dropdownOption3);
-        dropdownOption4 = findViewById(R.id.dropdownOption4);
-        dropdownOption5 = findViewById(R.id.dropdownOption5);
-
+        donationTargetSpinner = findViewById(R.id.donation_targets);
         permissionContact = findViewById(R.id.permissioncontact);
         uploadButton = findViewById(R.id.upload_button);
         submitButton = findViewById(R.id.submit_button);
@@ -70,18 +71,14 @@ public class DonationActivity extends AppCompatActivity {
         imagePreview = new ImageView(this);
     }
 
-    private void setupDropdowns() {
-        setDropdownAdapter(dropdownOption1, R.array.clothes_condition);
-        setDropdownAdapter(dropdownOption2, R.array.clothes_type);
-        setDropdownAdapter(dropdownOption3, R.array.worn_duration);
-        setDropdownAdapter(dropdownOption4, R.array.extra_options);
-        setDropdownAdapter(dropdownOption5, R.array.donation_target);
-    }
-
-    private void setDropdownAdapter(AutoCompleteTextView dropdown, int arrayRes) {
+    private void setupSpinner() {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, arrayRes, android.R.layout.simple_dropdown_item_1line);
-        dropdown.setAdapter(adapter);
+                this,
+                R.array.donation_targets,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        donationTargetSpinner.setAdapter(adapter);
     }
 
     private void setupUploadButton() {
@@ -115,16 +112,33 @@ public class DonationActivity extends AppCompatActivity {
                 donasi.setSize(inputSize.getText().toString());
                 donasi.setCallTime(inputCall.getText().toString());
                 donasi.setInfo(inputInfo.getText().toString());
-                donasi.setCondition(dropdownOption1.getText().toString());
-                donasi.setType(dropdownOption2.getText().toString());
-                donasi.setWornYears(dropdownOption3.getText().toString());
-                donasi.setExtraInfo(dropdownOption4.getText().toString());
-                donasi.setTarget(dropdownOption5.getText().toString());
+                donasi.setTarget(donationTargetSpinner.getSelectedItem().toString());
                 donasi.setPermission(permissionContact.isChecked());
                 donasi.setPhotoUri(selectedImageUri != null ? selectedImageUri.toString() : "");
             });
+
+            tambahPoinDonasi(100);
+            Toast.makeText(this, "Donasi berhasil dikirim dan +100 poin ditambahkan!", Toast.LENGTH_SHORT).show();
             finish();
         });
+    }
+
+    private void tambahPoinDonasi(int poin) {
+        SharedPreferences preferences = getSharedPreferences("user_session", Context.MODE_PRIVATE);
+        String email = preferences.getString("user_email", null);
+
+        if (email != null) {
+            realm.executeTransaction(r -> {
+                Point point = r.where(Point.class).equalTo("email", email).findFirst();
+                if (point != null) {
+                    point.setPoints(point.getPoints() + poin);
+                } else {
+                    Point newPoint = r.createObject(Point.class);
+                    newPoint.setEmail(email);
+                    newPoint.setPoints(poin);
+                }
+            });
+        }
     }
 
     @Override

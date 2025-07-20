@@ -43,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity {
         checkSpecial = findViewById(R.id.check_special);
         checkMatch = findViewById(R.id.check_match);
 
-        // Listener untuk validasi password secara real-time
         TextWatcher watcher = new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void afterTextChanged(Editable s) {}
@@ -121,7 +120,6 @@ public class RegisterActivity extends AppCompatActivity {
         updateCriteria(checkMatch, password.equals(confirm));
     }
 
-    // Update indikator password
     private void updateCriteria(TextView view, boolean valid) {
         if (valid) {
             view.setText("✓ " + view.getText().toString().substring(2));

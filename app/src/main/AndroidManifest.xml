@@ -84,6 +84,10 @@
             android:exported="true">
         </activity>
         <activity
+            android:name=".DonationActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".NotificationActivity"
             android:exported="true">
             <intent-filter>
