@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".DetailKomunitasActivity">
 
-    <!-- Konten Detail Komunitas -->
+    <!-- Community Details Content -->
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="0dp"
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Foto + Nama Komunitas -->
+            <!-- Community Photo + Name -->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -31,17 +31,17 @@
                 android:layout_marginTop="100dp">
 
                 <ImageView
-                    android:id="@+id/image_komunitas"
+                    android:id="@+id/image_community"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/communityone" />
 
                 <TextView
-                    android:id="@+id/text_nama_komunitas"
+                    android:id="@+id/text_community_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nama Komunitas"
+                    android:text="Community Name"
                     android:fontFamily="@font/montserrat_medium"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -52,62 +52,62 @@
                     android:layout_margin="8dp"/>
             </FrameLayout>
 
-            <!-- Alamat -->
+            <!-- Address -->
             <TextView
-                android:id="@+id/text_alamat"
+                android:id="@+id/text_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Alamat: Jl. Contoh No. 123, Kota Contoh"
+                android:text="Address: Example Street No. 123, Sample City"
                 android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- Kontak -->
+            <!-- Contact -->
             <TextView
-                android:id="@+id/text_kontak"
+                android:id="@+id/text_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kontak: 08123456789"
+                android:text="Contact: 08123456789"
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- Jam Buka -->
+            <!-- Opening Hours -->
             <TextView
-                android:id="@+id/text_jam_buka"
+                android:id="@+id/text_opening_hours"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jam Buka: 08:00 - 17:00"
+                android:text="Opening Hours: 08:00 - 17:00"
                 android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Jenis Pakaian -->
+            <!-- Accepted Clothing Types -->
             <TextView
-                android:id="@+id/text_jenis_pakaian"
+                android:id="@+id/text_accepted_clothing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jenis Pakaian yang Diterima:"
+                android:text="Accepted Clothing Types:"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="8dp"/>
 
             <TextView
-                android:id="@+id/list_jenis_pakaian"
+                android:id="@+id/list_clothing_types"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• Baju Anak\n• Baju Dewasa\n• Jaket\n• Celana\n• Sepatu"
+                android:text="• Children’s Clothes\n• Adult Clothes\n• Jackets\n• Pants\n• Shoes"
                 android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="24dp"/>
 
-            <!-- Tombol Donasi -->
+            <!-- Donate Button -->
             <Button
-                android:id="@+id/button_donasi_sekarang"
+                android:id="@+id/button_donate_now"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Donasi Sekarang"
+                android:text="Donate Now"
                 android:fontFamily="@font/montserrat_medium"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"

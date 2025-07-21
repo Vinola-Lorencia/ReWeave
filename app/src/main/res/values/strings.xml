@@ -97,12 +97,12 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string-array name="donation_targets">
-        <item>Komunitas A</item>
-        <item>Komunitas B</item>
-        <item>Komunitas C</item>
-        <item>Komunitas D</item>
-        <item>Komunitas E</item>
-        <item>Komunitas F</item>
+        <item>Threads of Care</item>
+        <item>Shared Wardrobe</item>
+        <item>Clothing Circle</item>
+        <item>Give a Garment</item>
+        <item>Hands n Fabrics</item>
+        <item>Wear Together</item>
     </string-array>
 
 
