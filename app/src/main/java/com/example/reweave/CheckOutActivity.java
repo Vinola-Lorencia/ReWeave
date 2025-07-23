@@ -77,7 +77,7 @@ public class CheckOutActivity extends AppCompatActivity {
                 pemesanan.setTotal(totalBayar);
             });
 
-            Toast.makeText(this, "Pembayaran berhasil!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Payment Success!", Toast.LENGTH_SHORT).show();
             finish();
         });
     }

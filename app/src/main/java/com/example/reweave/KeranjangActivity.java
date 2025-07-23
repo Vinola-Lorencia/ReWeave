@@ -43,7 +43,7 @@ public class KeranjangActivity extends AppCompatActivity {
 
         btnProceed.setOnClickListener(v -> {
             if (listKeranjang.isEmpty()) {
-                Toast.makeText(this, "Keranjang kosong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
                 return;
             }
 
