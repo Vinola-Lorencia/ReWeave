@@ -69,7 +69,7 @@
         <activity
             android:name=".RedeemPoinActivity"
             android:exported="false"
-            android:theme="@style/Theme.Point" />
+            android:theme="@style/Theme.Point" /> <!-- <activity android:name=".PenukaranPoinBerhasilActivity" android:exported="false" /> -->
         <activity
             android:name=".RiwayatDonasiActivity"
             android:exported="true">
