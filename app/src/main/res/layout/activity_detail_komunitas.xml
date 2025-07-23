@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".DetailKomunitasActivity">
 
-    <!-- Community Details Content -->
+    <!-- Community Detail Content -->
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="0dp"
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- Community Photo + Name -->
+            <!-- Photo + Community Name -->
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -31,14 +31,14 @@
                 android:layout_marginTop="100dp">
 
                 <ImageView
-                    android:id="@+id/image_community"
+                    android:id="@+id/image_komunitas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/communityone" />
 
                 <TextView
-                    android:id="@+id/text_community_name"
+                    android:id="@+id/text_nama_komunitas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Community Name"
@@ -54,17 +54,17 @@
 
             <!-- Address -->
             <TextView
-                android:id="@+id/text_address"
+                android:id="@+id/text_alamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Address: Example Street No. 123, Sample City"
+                android:text="Address: 123 Example Street, Example City"
                 android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="8dp"/>
 
             <!-- Contact -->
             <TextView
-                android:id="@+id/text_contact"
+                android:id="@+id/text_kontak"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Contact: 08123456789"
@@ -74,7 +74,7 @@
 
             <!-- Opening Hours -->
             <TextView
-                android:id="@+id/text_opening_hours"
+                android:id="@+id/text_jam_buka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Opening Hours: 08:00 - 17:00"
@@ -82,29 +82,29 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Accepted Clothing Types -->
+            <!-- Types of Clothing -->
             <TextView
-                android:id="@+id/text_accepted_clothing"
+                android:id="@+id/text_jenis_pakaian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Accepted Clothing Types:"
+                android:text="Types of Accepted Clothing:"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="8dp"/>
 
             <TextView
-                android:id="@+id/list_clothing_types"
+                android:id="@+id/list_jenis_pakaian"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• Children’s Clothes\n• Adult Clothes\n• Jackets\n• Pants\n• Shoes"
+                android:text="• Children's Clothes\n• Adult Clothes\n• Jackets\n• Pants\n• Shoes"
                 android:textSize="16sp"
                 android:fontFamily="@font/montserrat_medium"
                 android:layout_marginBottom="24dp"/>
 
             <!-- Donate Button -->
             <Button
-                android:id="@+id/button_donate_now"
+                android:id="@+id/button_donasi_sekarang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Donate Now"

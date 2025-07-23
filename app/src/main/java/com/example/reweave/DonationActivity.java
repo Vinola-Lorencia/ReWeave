@@ -99,14 +99,39 @@ public class DonationActivity extends AppCompatActivity {
         }
     }
 
+    private boolean isEmpty(TextInputEditText input) {
+        return input.getText() == null || input.getText().toString().trim().isEmpty();
+    }
+
     private void setupSubmitButton() {
         submitButton.setOnClickListener(view -> {
+            // Validasi wajib isi
+            if (isEmpty(inputFirst) || isEmpty(inputLast) || isEmpty(inputEmail) || isEmpty(inputPhone) ||
+                    isEmpty(inputType) || isEmpty(inputColor) || isEmpty(inputSize) || isEmpty(inputCall) ||
+                    donationTargetSpinner.getSelectedItem() == null || selectedImageUri == null) {
+
+                Toast.makeText(this, "Semua kolom wajib diisi dan foto harus diunggah!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String email = inputEmail.getText().toString().trim();
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Format email tidak valid!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String phone = inputPhone.getText().toString().trim();
+            if (phone.length() < 10) {
+                Toast.makeText(this, "Nomor telepon terlalu pendek!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             realm.executeTransaction(r -> {
                 Donasi donasi = r.createObject(Donasi.class, java.util.UUID.randomUUID().toString());
                 donasi.setFirstName(inputFirst.getText().toString());
                 donasi.setLastName(inputLast.getText().toString());
-                donasi.setEmail(inputEmail.getText().toString());
-                donasi.setPhone(inputPhone.getText().toString());
+                donasi.setEmail(email);
+                donasi.setPhone(phone);
                 donasi.setBrand(inputType.getText().toString());
                 donasi.setColor(inputColor.getText().toString());
                 donasi.setSize(inputSize.getText().toString());
@@ -114,7 +139,7 @@ public class DonationActivity extends AppCompatActivity {
                 donasi.setInfo(inputInfo.getText().toString());
                 donasi.setTarget(donationTargetSpinner.getSelectedItem().toString());
                 donasi.setPermission(permissionContact.isChecked());
-                donasi.setPhotoUri(selectedImageUri != null ? selectedImageUri.toString() : "");
+                donasi.setPhotoUri(selectedImageUri.toString());
             });
 
             tambahPoinDonasi(100);
@@ -122,6 +147,7 @@ public class DonationActivity extends AppCompatActivity {
             finish();
         });
     }
+
 
     private void tambahPoinDonasi(int poin) {
         SharedPreferences preferences = getSharedPreferences("user_session", Context.MODE_PRIVATE);
