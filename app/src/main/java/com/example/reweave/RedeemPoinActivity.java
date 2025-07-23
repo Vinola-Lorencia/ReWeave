@@ -138,13 +138,12 @@ public class RedeemPoinActivity extends AppCompatActivity {
                 notif.setPromoTitle(promoTitle);
                 notif.setPointsRedeemed(totalPoints);
                 notif.setDate(new java.util.Date());
+                notif.setAddition(false); // PENTING: redeem = pengurangan
             });
 
-            // Setelah sukses transaksi Realm
             Toast.makeText(this, "Congrats, You have redeemed " + quantity + "x " + promoTitle, Toast.LENGTH_SHORT).show();
             finish();
         } else {
-            // Poin tidak cukup
             Toast.makeText(this, "Point isn't enough", Toast.LENGTH_SHORT).show();
         }
     }

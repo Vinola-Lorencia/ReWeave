@@ -26,7 +26,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginHorizontal="8dp"
             android:textColor="@color/black"
-            android:text="Kode Promo Grab" />
+            android:text="Grab Promo Code"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                     android:id="@+id/tv_point"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200 Point"
+                    android:text="200 Points"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#FE9923"

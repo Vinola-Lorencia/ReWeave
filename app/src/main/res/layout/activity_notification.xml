@@ -15,7 +15,7 @@
         android:paddingLeft="25dp"
         android:paddingBottom="25dp"
         android:paddingRight="25dp"
-        android:paddingTop="90dp">
+        android:paddingTop="80dp">
 
         <!-- Header -->
         <LinearLayout

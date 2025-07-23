@@ -50,7 +50,7 @@ public class ChangePoinActivity extends AppCompatActivity {
         });
 
         btnTambahPoin.setOnClickListener(v -> {
-            Intent intent = new Intent(ChangePoinActivity.this, DonateFragment.class);
+            Intent intent = new Intent(ChangePoinActivity.this, DonationActivity.class);
             startActivity(intent);
         });
 
@@ -88,12 +88,12 @@ public class ChangePoinActivity extends AppCompatActivity {
     }
 
     private void addSamplePromos() {
-        promoList.add(new PromoItem(1, "Kode Promo Grab", "200", R.drawable.poin1));
-        promoList.add(new PromoItem(2, "Kode Promo Gojek", "200", R.drawable.poin2));
-        promoList.add(new PromoItem(3, "Tas Belanja Eco", "300", R.drawable.poin3));
-        promoList.add(new PromoItem(4, "Komposter Mini", "400", R.drawable.poin4));
-        promoList.add(new PromoItem(5, "Sedotan stainless steel", "200", R.drawable.poin5));
-        promoList.add(new PromoItem(6, "Makanan Eco", "100", R.drawable.poin6));
+        promoList.add(new PromoItem(1, "Grab Promo Code", "200", R.drawable.poin1));
+        promoList.add(new PromoItem(2, "Gojek Promo Code", "200", R.drawable.poin2));
+        promoList.add(new PromoItem(3, "Eco Friendly Bag", "300", R.drawable.poin3));
+        promoList.add(new PromoItem(4, "Mini Fan", "400", R.drawable.poin4));
+        promoList.add(new PromoItem(5, "Stainless Steels Straw", "200", R.drawable.poin5));
+        promoList.add(new PromoItem(6, "Eco Friendly Lunchbox", "100", R.drawable.poin6));
         adapter.notifyDataSetChanged();
     }
 

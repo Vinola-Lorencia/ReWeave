@@ -58,9 +58,15 @@ public class PoinNotificationAdapter extends BaseAdapter {
         }
 
         PoinNotification item = notificationList.get(position);
-        holder.judul.setText("Your coins have been redeemed");
-        holder.isi.setText("Amount " + item.getPointsRedeemed() + " points for " + item.getPromoTitle());
+        if (item.isAddition()) {
+            holder.judul.setText("You got " + item.getPointsRedeemed() + " coins");
+            holder.isi.setText("Congrats! You've earned " + item.getPointsRedeemed() + " points from " + item.getPromoTitle());
+        } else {
+            holder.judul.setText("Your coins have been redeemed");
+            holder.isi.setText("You used " + item.getPointsRedeemed() + " points for " + item.getPromoTitle());
+        }
 
         return convertView;
     }
+
 }
