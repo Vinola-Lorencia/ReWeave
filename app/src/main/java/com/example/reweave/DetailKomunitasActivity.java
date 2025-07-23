@@ -14,6 +14,8 @@ public class DetailKomunitasActivity extends AppCompatActivity {
     private TextView namaKomunitas, alamat, kontak, jamBuka, listJenisPakaian;
     private Button donasiSekarangButton;
 
+    private String nama, alamatText; // disimpan sebagai field agar bisa dipakai untuk intent
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +39,12 @@ public class DetailKomunitasActivity extends AppCompatActivity {
     private void handleIntent() {
         Intent intent = getIntent();
         if (intent != null) {
-            String nama = intent.getStringExtra("namaKomunitas");
-            String alamatText = intent.getStringExtra("alamat");
+            nama = intent.getStringExtra("namaKomunitas");
+            alamatText = intent.getStringExtra("alamat");
             String kontakText = intent.getStringExtra("kontak");
             String jam = intent.getStringExtra("jamBuka");
             String jenisPakaian = intent.getStringExtra("jenisPakaian");
-            int imageResId = intent.getIntExtra("imageResId", -1); // ambil gambar
+            int imageResId = intent.getIntExtra("imageResId", -1);
 
             namaKomunitas.setText(nama != null ? nama : "Nama Komunitas Tidak Ada");
             alamat.setText("Alamat: " + (alamatText != null ? alamatText : "-"));
@@ -51,7 +53,7 @@ public class DetailKomunitasActivity extends AppCompatActivity {
             listJenisPakaian.setText(jenisPakaian != null ? jenisPakaian : "-");
 
             if (imageResId != -1) {
-                imageKomunitas.setImageResource(imageResId); // tampilkan gambar
+                imageKomunitas.setImageResource(imageResId);
             }
         }
     }
@@ -59,6 +61,8 @@ public class DetailKomunitasActivity extends AppCompatActivity {
     private void handleButtons() {
         donasiSekarangButton.setOnClickListener(v -> {
             Intent donationIntent = new Intent(DetailKomunitasActivity.this, DonationActivity.class);
+            donationIntent.putExtra("community_name", nama);
+            donationIntent.putExtra("community_address", alamatText);
             startActivity(donationIntent);
         });
     }
