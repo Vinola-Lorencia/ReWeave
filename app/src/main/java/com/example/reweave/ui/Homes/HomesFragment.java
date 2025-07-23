@@ -92,10 +92,7 @@ public class HomesFragment extends Fragment {
 
         // Navigasi tombol
         btnChange.setOnClickListener(v -> startActivity(new Intent(requireContext(), ChangePoinActivity.class)));
-        btnCollect.setOnClickListener(v -> {
-            NavController navController = NavHostFragment.findNavController(HomesFragment.this);
-            navController.navigate(R.id.navigation_donate);
-        });
+        btnCollect.setOnClickListener(v -> startActivity(new Intent(requireContext(),DonationActivity.class)));
         button.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
         button1.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
         button2.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));

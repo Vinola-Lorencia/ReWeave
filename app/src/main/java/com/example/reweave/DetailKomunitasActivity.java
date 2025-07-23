@@ -46,10 +46,11 @@ public class DetailKomunitasActivity extends AppCompatActivity {
             String jenisPakaian = intent.getStringExtra("jenisPakaian");
             int imageResId = intent.getIntExtra("imageResId", -1);
 
-            namaKomunitas.setText(nama != null ? nama : "Nama Komunitas Tidak Ada");
-            alamat.setText("Alamat: " + (alamatText != null ? alamatText : "-"));
-            kontak.setText("Kontak: " + (kontakText != null ? kontakText : "-"));
-            jamBuka.setText("Jam Buka: " + (jam != null ? jam : "-"));
+
+            namaKomunitas.setText(nama != null ? nama : "No Community Name");
+            alamat.setText("Address: " + (alamatText != null ? alamatText : "-"));
+            kontak.setText("Contact: " + (kontakText != null ? kontakText : "-"));
+            jamBuka.setText("Opening Hours: " + (jam != null ? jam : "-"));
             listJenisPakaian.setText(jenisPakaian != null ? jenisPakaian : "-");
 
             if (imageResId != -1) {

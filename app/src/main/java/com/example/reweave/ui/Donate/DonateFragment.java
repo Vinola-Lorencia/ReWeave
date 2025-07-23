@@ -19,16 +19,39 @@ import com.example.reweave.DetailKomunitasActivity;
 import com.example.reweave.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DonateFragment extends Fragment {
 
     private EditText searchEditText;
-//    private Map<String, View> komunitasCards;
     private List<Pair<String, View>> komunitasCards;
 
+    private final int[] cardIds = {
+            R.id.card_komunitas_a,
+            R.id.card_komunitas_b,
+            R.id.card_komunitas_c,
+            R.id.card_komunitas_d,
+            R.id.card_komunitas_e,
+            R.id.card_komunitas_f
+    };
+
+    private final int[] buttonIds = {
+            R.id.btn_join_komunitas_a,
+            R.id.btn_join_komunitas_b,
+            R.id.btn_join_komunitas_c,
+            R.id.btn_join_komunitas_d,
+            R.id.btn_join_komunitas_e,
+            R.id.btn_join_komunitas_f
+    };
+
+    private final int[] imageResIds = {
+            R.drawable.community,
+            R.drawable.communitytwo,
+            R.drawable.communitythree,
+            R.drawable.communityfour,
+            R.drawable.communityfive,
+            R.drawable.communitysix
+    };
 
     @Nullable
     @Override
@@ -36,30 +59,27 @@ public class DonateFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_donate, container, false);
 
         searchEditText = view.findViewById(R.id.edit_search);
-
         komunitasCards = new ArrayList<>();
 
-        komunitasCards.add(new Pair<>("Pakaian Peduli", view.findViewById(R.id.card_komunitas_a)));
-        komunitasCards.add(new Pair<>("Berbagi Hangat", view.findViewById(R.id.card_komunitas_b)));
-        komunitasCards.add(new Pair<>("Komunitas Sandang", view.findViewById(R.id.card_komunitas_c)));
-        komunitasCards.add(new Pair<>("Hangat Sesama", view.findViewById(R.id.card_komunitas_d)));
-        komunitasCards.add(new Pair<>("Wardrobe Amal", view.findViewById(R.id.card_komunitas_e)));
-        komunitasCards.add(new Pair<>("Gerakan Pakaian Layak", view.findViewById(R.id.card_komunitas_f)));
+        // Ambil data dari strings.xml
+        String[] namaArray = getResources().getStringArray(R.array.donation_targets);
+        String[] alamatArray = getResources().getStringArray(R.array.alamat_komunitas);
+        String[] kontakArray = getResources().getStringArray(R.array.kontak_komunitas);
+        String[] jamArray = getResources().getStringArray(R.array.jam_komunitas);
+        String[] jenisArray = getResources().getStringArray(R.array.jenis_pakaian_komunitas);
 
+        // Loop data komunitas
+        for (int i = 0; i < cardIds.length; i++) {
+            View cardView = view.findViewById(cardIds[i]);
+            komunitasCards.add(new Pair<>(namaArray[i], cardView));
 
-        // Setup tombol join per komunitas
-        setupJoin(view, R.id.btn_join_komunitas_a, "Pakaian Peduli", "Jl. Mawar No.1", "0811111111", "08:00 - 16:00", "• Baju Anak\n• Jaket\n• Celana", R.drawable.community);
-        setupJoin(view, R.id.btn_join_komunitas_b, "Berbagi Hangat", "Jl. Melati No.2", "0822222222", "09:00 - 17:00", "• Baju Dewasa\n• Sepatu", R.drawable.communitytwo);
-        setupJoin(view, R.id.btn_join_komunitas_c, "Komunitas Sandang", "Jl. Anggrek No.3", "0833333333", "07:00 - 15:00", "• Jaket\n• Celana\n• Sepatu", R.drawable.communitythree);
-        setupJoin(view, R.id.btn_join_komunitas_d, "Hangat Sesama", "Jl. Kenanga No.4", "0844444444", "10:00 - 18:00", "• Semua Jenis Pakaian", R.drawable.communityfour);
-        setupJoin(view, R.id.btn_join_komunitas_e, "Wardrobe Amal", "Jl. Dahlia No.5", "0855555555", "11:00 - 19:00", "• Baju Anak\n• Baju Dewasa", R.drawable.communityfive);
-        setupJoin(view, R.id.btn_join_komunitas_f, "Gerakan Pakaian Layak", "Jl. Sakura No.6", "0866666666", "08:00 - 17:00", "• Baju Dewasa\n• Jaket\n• Sepatu", R.drawable.communitysix);
+            setupJoin(view, buttonIds[i], namaArray[i], alamatArray[i], kontakArray[i], jamArray[i], jenisArray[i], imageResIds[i]);
+        }
 
         setupSearch();
 
         return view;
     }
-
 
     private void setupJoin(View view, int btnId, String nama, String alamat, String kontak, String jam, String jenisPakaian, int imageResId) {
         Button btn = view.findViewById(btnId);
@@ -70,11 +90,10 @@ public class DonateFragment extends Fragment {
             intent.putExtra("kontak", kontak);
             intent.putExtra("jamBuka", jam);
             intent.putExtra("jenisPakaian", jenisPakaian);
-            intent.putExtra("imageResId", imageResId); // ini penting
+            intent.putExtra("imageResId", imageResId);
             startActivity(intent);
         });
     }
-
 
     private void setupSearch() {
         searchEditText.addTextChangedListener(new TextWatcher() {
@@ -90,6 +109,4 @@ public class DonateFragment extends Fragment {
             }
         });
     }
-
-
 }

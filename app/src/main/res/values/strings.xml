@@ -105,6 +105,43 @@
         <item>Wear Together</item>
     </string-array>
 
+    <string-array name="alamat_komunitas">
+        <item>1 Rose Street</item>
+        <item>2 Jasmine Avenue</item>
+        <item>3 Orchid Lane</item>
+        <item>4 Lily Road</item>
+        <item>5 Daisy Blvd</item>
+        <item>6 Sakura Street</item>
+    </string-array>
+
+    <string-array name="kontak_komunitas">
+        <item>0811111111</item>
+        <item>0822222222</item>
+        <item>0833333333</item>
+        <item>0844444444</item>
+        <item>0855555555</item>
+        <item>0866666666</item>
+    </string-array>
+
+    <string-array name="jam_komunitas">
+        <item>08:00 - 16:00</item>
+        <item>09:00 - 17:00</item>
+        <item>07:00 - 15:00</item>
+        <item>10:00 - 18:00</item>
+        <item>11:00 - 19:00</item>
+        <item>08:00 - 17:00</item>
+    </string-array>
+
+    <string-array name="jenis_pakaian_komunitas">
+        <item>• Children’s Clothes\n• Jackets\n• Pants</item>
+        <item>• Adult Clothes\n• Shoes</item>
+        <item>• Jackets\n• Pants\n• Shoes</item>
+        <item>• All types of clothes</item>
+        <item>• Children’s Clothes\n• Adult Clothes</item>
+        <item>• Adult Clothes\n• Jackets\n• Shoes</item>
+    </string-array>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
