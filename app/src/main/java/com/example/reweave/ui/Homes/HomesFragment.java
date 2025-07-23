@@ -20,10 +20,13 @@ import android.widget.Button;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.reweave.ChangePoinActivity;
 import com.example.reweave.DonationActivity;
 import com.example.reweave.MainUIActivity;
+
 import com.example.reweave.Model.Point;
 import com.example.reweave.Model.User;
 import com.example.reweave.NotificationActivity;
@@ -89,7 +92,10 @@ public class HomesFragment extends Fragment {
 
         // Navigasi tombol
         btnChange.setOnClickListener(v -> startActivity(new Intent(requireContext(), ChangePoinActivity.class)));
-        btnCollect.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonateFragment.class)));
+        btnCollect.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(HomesFragment.this);
+            navController.navigate(R.id.navigation_donate);
+        });
         button.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
         button1.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
         button2.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));

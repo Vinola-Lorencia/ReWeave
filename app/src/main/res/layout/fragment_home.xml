@@ -13,7 +13,7 @@
         android:paddingLeft="25dp"
         android:paddingTop="70dp"
         android:paddingRight="25dp"
-        android:paddingBottom="22dp"
+        android:paddingBottom="20dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="0dp">
 
@@ -45,10 +45,11 @@
 
             <ImageButton
                 android:id="@+id/imagenot"
-                android:layout_width="29dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.2"
                 android:background="#DAFFFFFF"
+                android:scrollbarSize="1sp"
                 android:src="@drawable/img"
                 tools:src="@drawable/img" />
         </LinearLayout>
