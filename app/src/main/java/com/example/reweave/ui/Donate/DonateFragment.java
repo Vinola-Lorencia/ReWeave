@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.reweave.DetailKomunitasActivity;
 import com.example.reweave.R;
+import com.example.reweave.RiwayatDonasiActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ public class DonateFragment extends Fragment {
 
     private EditText searchEditText;
     private List<Pair<String, View>> komunitasCards;
+    ImageView icon_history3;
 
     private final int[] cardIds = {
             R.id.card_komunitas_a,
@@ -60,6 +63,13 @@ public class DonateFragment extends Fragment {
 
         searchEditText = view.findViewById(R.id.edit_search);
         komunitasCards = new ArrayList<>();
+
+        ImageView iconHistory = view.findViewById(R.id.icon_history3);
+        iconHistory.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), RiwayatDonasiActivity.class);
+            startActivity(intent);
+        });
+
 
         // Ambil data dari strings.xml
         String[] namaArray = getResources().getStringArray(R.array.donation_targets);
