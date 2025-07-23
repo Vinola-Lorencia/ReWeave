@@ -140,21 +140,21 @@ public class MarketplaceFragment extends Fragment {
         realm.executeTransaction(r -> {
             FlashSale item1 = r.createObject(FlashSale.class, 1);
             item1.setNamaBarangFlashSale("Upcycled Denim Bag");
-            item1.setDetail("Tas berbahan denim daur ulang");
+            item1.setDetail("Upcycled bag");
             item1.setHargaAwal("250000");
             item1.setHargaDiskon("50000");
             item1.setGambarProduk(R.drawable.tassatu);
 
             FlashSale item2 = r.createObject(FlashSale.class, 2);
             item2.setNamaBarangFlashSale("Eco Tote Bag");
-            item2.setDetail("Tote bag ramah lingkungan");
+            item2.setDetail("Eco-Friendly Totebag");
             item2.setHargaAwal("180000");
             item2.setHargaDiskon("40000");
             item2.setGambarProduk(R.drawable.tasdua);
 
             FlashSale item3 = r.createObject(FlashSale.class, 3);
             item3.setNamaBarangFlashSale("Canvas Bag Limited");
-            item3.setDetail("Tas kanvas edisi terbatas");
+            item3.setDetail("Limited edition Bag");
             item3.setHargaAwal("300000");
             item3.setHargaDiskon("20000");
             item3.setGambarProduk(R.drawable.tas3);

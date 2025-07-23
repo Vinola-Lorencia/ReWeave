@@ -177,14 +177,14 @@ public class TampilanProdukActivity extends AppCompatActivity {
         if (realm.where(Produk.class).findAll().isEmpty()) {
             realm.executeTransaction(r -> {
                 Produk p1 = r.createObject(Produk.class, 1);
-                p1.setNamaProduk("UpCycled Jeans dress");
+                p1.setNamaProduk("UpCycled Jeans Dress");
                 p1.setHarga(300000);
                 p1.setGambar(R.drawable.f1);
                 p1.setOnSale(false);
                 p1.setKategori("fashion");
                 p1.setRating(4.2);
                 p1.setLike(3.8);
-                p1.setDetail("Dress berbahan jeans daur ulang dengan potongan modern.");
+                p1.setDetail("Modern cut dress made from recycled jeans.");
 
                 Produk p2 = r.createObject(Produk.class, 2);
                 p2.setNamaProduk("Denim Jacket 1");
@@ -194,7 +194,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p2.setKategori("fashion");
                 p2.setRating(4.0);
                 p2.setLike(3.5);
-                p2.setDetail("Jaket denim klasik yang nyaman dan ramah lingkungan.");
+                p2.setDetail("Classic denim jacket that's comfy and eco-friendly.");
 
                 Produk p3 = r.createObject(Produk.class, 3);
                 p3.setNamaProduk("Upcycled Denim Shirt");
@@ -204,7 +204,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p3.setKategori("fashion");
                 p3.setRating(4.5);
                 p3.setLike(4.1);
-                p3.setDetail("Kemeja denim daur ulang dengan desain stylish.");
+                p3.setDetail("Recycled denim shirt with a stylish design.");
 
                 Produk p4 = r.createObject(Produk.class, 4);
                 p4.setNamaProduk("Outer Denim 1");
@@ -214,7 +214,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p4.setKategori("fashion");
                 p4.setRating(4.1);
                 p4.setLike(3.7);
-                p4.setDetail("Outer denim yang cocok untuk segala suasana.");
+                p4.setDetail("Denim outerwear suitable for any occasion.");
 
                 Produk p5 = r.createObject(Produk.class, 5);
                 p5.setNamaProduk("Outer Denim 2");
@@ -224,7 +224,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p5.setKategori("fashion");
                 p5.setRating(4.3);
                 p5.setLike(3.9);
-                p5.setDetail("Outer denim simpel dengan potongan modern.");
+                p5.setDetail("Simple denim outerwear with a modern cut.");
 
                 Produk p6 = r.createObject(Produk.class, 6);
                 p6.setNamaProduk("Outer Denim 3");
@@ -234,7 +234,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p6.setKategori("fashion");
                 p6.setRating(4.7);
                 p6.setLike(4.5);
-                p6.setDetail("Outer premium dengan detail bordir unik.");
+                p6.setDetail("Premium outerwear with unique embroidered details.");
 
                 Produk p7 = r.createObject(Produk.class, 7);
                 p7.setNamaProduk("Denim Skirt");
@@ -244,7 +244,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p7.setKategori("fashion");
                 p7.setRating(4.0);
                 p7.setLike(3.6);
-                p7.setDetail("Rok denim hasil upcycle, cocok untuk tampil feminim.");
+                p7.setDetail("Upcycled denim skirt for a feminine look.");
 
                 Produk p8 = r.createObject(Produk.class, 8);
                 p8.setNamaProduk("Denim Pants");
@@ -254,7 +254,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p8.setKategori("fashion");
                 p8.setRating(4.4);
                 p8.setLike(3.8);
-                p8.setDetail("Celana denim kasual untuk aktivitas harian.");
+                p8.setDetail("Casual denim pants for daily activities.");
 
                 Produk p9 = r.createObject(Produk.class, 9);
                 p9.setNamaProduk("Upcycled Owl Decoration");
@@ -264,7 +264,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p9.setKategori("decor");
                 p9.setRating(3.9);
                 p9.setLike(3.3);
-                p9.setDetail("Dekorasi dinding berbentuk burung hantu unik.");
+                p9.setDetail("Unique owl-shaped wall decoration.");
 
                 Produk p10 = r.createObject(Produk.class, 10);
                 p10.setNamaProduk("Phone Pouch");
@@ -274,7 +274,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p10.setKategori("decor");
                 p10.setRating(4.2);
                 p10.setLike(3.9);
-                p10.setDetail("Pouch ponsel lucu dari bahan denim bekas.");
+                p10.setDetail("Cute phone pouch made from old denim.");
 
                 Produk p11 = r.createObject(Produk.class, 11);
                 p11.setNamaProduk("Denim Pocket");
@@ -284,7 +284,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p11.setKategori("decor");
                 p11.setRating(4.0);
                 p11.setLike(3.5);
-                p11.setDetail("Tempat penyimpanan kecil dari denim.");
+                p11.setDetail("Small storage made from denim.");
 
                 Produk p12 = r.createObject(Produk.class, 12);
                 p12.setNamaProduk("Denim Storage");
@@ -294,7 +294,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p12.setKategori("decor");
                 p12.setRating(4.1);
                 p12.setLike(3.8);
-                p12.setDetail("Kotak penyimpanan multifungsi dari denim.");
+                p12.setDetail("Multipurpose storage box made of denim.");
 
                 Produk p13 = r.createObject(Produk.class, 13);
                 p13.setNamaProduk("Pencil Holder");
@@ -304,7 +304,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p13.setKategori("decor");
                 p13.setRating(4.3);
                 p13.setLike(4.0);
-                p13.setDetail("Tempat pensil bergaya rustic dari bahan denim.");
+                p13.setDetail("Rustic-style pencil holder from denim.");
 
                 Produk p14 = r.createObject(Produk.class, 14);
                 p14.setNamaProduk("Lamp");
@@ -314,7 +314,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p14.setKategori("decor");
                 p14.setRating(3.8);
                 p14.setLike(3.2);
-                p14.setDetail("Lampu meja dari kombinasi denim dan kayu daur ulang.");
+                p14.setDetail("Desk lamp made of recycled denim and wood.");
 
                 Produk p15 = r.createObject(Produk.class, 15);
                 p15.setNamaProduk("Racket Clock");
@@ -324,7 +324,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p15.setKategori("decor");
                 p15.setRating(4.6);
                 p15.setLike(4.4);
-                p15.setDetail("Jam dinding unik dari raket bekas.");
+                p15.setDetail("Unique wall clock made from an old racket.");
 
                 Produk p16 = r.createObject(Produk.class, 16);
                 p16.setNamaProduk("ToteBag 1");
@@ -334,7 +334,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p16.setKategori("totebag");
                 p16.setRating(4.0);
                 p16.setLike(3.7);
-                p16.setDetail("Tote bag simpel dengan resleting kuat.");
+                p16.setDetail("Simple tote bag with durable zipper.");
 
                 Produk p17 = r.createObject(Produk.class, 17);
                 p17.setNamaProduk("ToteBag 2");
@@ -344,7 +344,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p17.setKategori("totebag");
                 p17.setRating(4.5);
                 p17.setLike(4.1);
-                p17.setDetail("Tote bag dengan motif daun tropis.");
+                p17.setDetail("Tote bag with tropical leaf patterns.");
 
                 Produk p18 = r.createObject(Produk.class, 18);
                 p18.setNamaProduk("ToteBag 3");
@@ -354,7 +354,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p18.setKategori("totebag");
                 p18.setRating(4.3);
                 p18.setLike(4.0);
-                p18.setDetail("Tote bag dengan tali panjang dan ruang luas.");
+                p18.setDetail("Tote bag with long strap and spacious room.");
 
                 Produk p19 = r.createObject(Produk.class, 19);
                 p19.setNamaProduk("ToteBag 4");
@@ -364,7 +364,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p19.setKategori("totebag");
                 p19.setRating(4.1);
                 p19.setLike(3.6);
-                p19.setDetail("Tote bag elegan dengan bahan kuat.");
+                p19.setDetail("Elegant tote bag made of strong material.");
 
                 Produk p20 = r.createObject(Produk.class, 20);
                 p20.setNamaProduk("ToteBag 5");
@@ -374,7 +374,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p20.setKategori("totebag");
                 p20.setRating(3.9);
                 p20.setLike(3.3);
-                p20.setDetail("Tote bag dengan jahitan rapi dan desain trendi.");
+                p20.setDetail("Tote bag with neat stitches and trendy design.");
 
                 Produk p21 = r.createObject(Produk.class, 21);
                 p21.setNamaProduk("ToteBag 6");
@@ -384,7 +384,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p21.setKategori("totebag");
                 p21.setRating(4.4);
                 p21.setLike(4.2);
-                p21.setDetail("Tote bag ringan dari kain daur ulang.");
+                p21.setDetail("Lightweight tote bag made of recycled fabric.");
 
                 Produk p22 = r.createObject(Produk.class, 22);
                 p22.setNamaProduk("ToteBag 7");
@@ -394,7 +394,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p22.setKategori("totebag");
                 p22.setRating(4.2);
                 p22.setLike(3.9);
-                p22.setDetail("Tote bag dari tirai bekas yang disulap jadi cantik.");
+                p22.setDetail("Tote bag transformed from old curtains into something beautiful.");
 
                 Produk p23 = r.createObject(Produk.class, 23);
                 p23.setNamaProduk("Hat 1");
@@ -404,7 +404,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p23.setKategori("hat");
                 p23.setRating(4.0);
                 p23.setLike(3.7);
-                p23.setDetail("Topi jerami dengan desain natural.");
+                p23.setDetail("Straw hat with a natural design.");
 
                 Produk p24 = r.createObject(Produk.class, 24);
                 p24.setNamaProduk("Hat 2");
@@ -414,7 +414,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p24.setKategori("hat");
                 p24.setRating(3.8);
                 p24.setLike(3.5);
-                p24.setDetail("Topi kasual dengan sentuhan etnik.");
+                p24.setDetail("Casual hat with ethnic touch.");
 
                 Produk p25 = r.createObject(Produk.class, 25);
                 p25.setNamaProduk("Hat 3");
@@ -424,7 +424,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p25.setKategori("hat");
                 p25.setRating(4.1);
                 p25.setLike(3.9);
-                p25.setDetail("Topi beraksen rajut dari bahan ramah lingkungan.");
+                p25.setDetail("Knitted accent hat made from eco-friendly materials.");
 
                 Produk p26 = r.createObject(Produk.class, 26);
                 p26.setNamaProduk("Hat 4");
@@ -434,7 +434,7 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p26.setKategori("hat");
                 p26.setRating(3.9);
                 p26.setLike(3.4);
-                p26.setDetail("Topi unik yang cocok untuk musim panas.");
+                p26.setDetail("Unique hat suitable for summer.");
 
                 Produk p27 = r.createObject(Produk.class, 27);
                 p27.setNamaProduk("Hat 5");
@@ -444,10 +444,10 @@ public class TampilanProdukActivity extends AppCompatActivity {
                 p27.setKategori("hat");
                 p27.setRating(4.2);
                 p27.setLike(4.0);
-                p27.setDetail("Topi nyaman dengan warna netral untuk gaya harian.");
-
+                p27.setDetail("Comfortable hat in neutral color for daily style.");
             });
         }
+
         realm.close();
     }
 

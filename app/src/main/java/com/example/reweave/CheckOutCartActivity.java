@@ -83,10 +83,10 @@ public class CheckOutCartActivity extends AppCompatActivity {
                     semua.deleteAllFromRealm();
                 });
 
-                Toast.makeText(this, "Pembayaran berhasil dilakukan!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Payment Success!", Toast.LENGTH_SHORT).show();
                 finish();
             } catch (Exception e) {
-                Toast.makeText(this, "Gagal memproses pembayaran: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Fail " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }

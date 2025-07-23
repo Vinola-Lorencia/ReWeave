@@ -93,7 +93,7 @@ public class DetailProdukActivity extends AppCompatActivity {
                 keranjang.setKuantitas(quantity);
             });
 
-            Toast.makeText(this, "Ditambahkan ke keranjang", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Add to Cart", Toast.LENGTH_SHORT).show();
 
             // Lanjut ke halaman keranjang
             Intent intent = new Intent(DetailProdukActivity.this, KeranjangActivity.class);
