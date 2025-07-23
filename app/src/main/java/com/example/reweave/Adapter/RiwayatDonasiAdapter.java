@@ -33,10 +33,9 @@ public class RiwayatDonasiAdapter extends RecyclerView.Adapter<RiwayatDonasiAdap
     public void onBindViewHolder(@NonNull RiwayatDonasiAdapter.ViewHolder holder, int position) {
         Donasi donasi = donasiList.get(position);
 
-        holder.tvBarang.setText(donasi.getBrand());
-        holder.tvTanggal.setText(donasi.getCallTime()); // atau bisa nanti pakai date
-        holder.tvStatus.setText("Congratulations, "); // kamu bisa nanti pakai field status kalau ditambahkan
-        holder.tvPoint.setText("+ 100 Poin"); // ini juga bisa pakai field poin kalau mau dinamis
+        // Tampilkan nama komunitas dan poin
+        holder.tvNamaKomunitas.setText(donasi.getKomunitas());
+        holder.tvTambahPoin.setText("+ " + donasi.getPoint() + " Poin");
     }
 
     @Override
@@ -45,14 +44,12 @@ public class RiwayatDonasiAdapter extends RecyclerView.Adapter<RiwayatDonasiAdap
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvBarang, tvTanggal, tvStatus, tvPoint;
+        TextView tvNamaKomunitas, tvTambahPoin;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvBarang = itemView.findViewById(R.id.tv_barang);
-            tvTanggal = itemView.findViewById(R.id.tv_tanggal);
-            tvStatus = itemView.findViewById(R.id.tv_status);
-            tvPoint = itemView.findViewById(R.id.tv_point);
+            tvNamaKomunitas = itemView.findViewById(R.id.namaKomunitas);
+            tvTambahPoin = itemView.findViewById(R.id.tambahPoin);
         }
     }
 }

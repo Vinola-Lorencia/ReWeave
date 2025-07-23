@@ -1,6 +1,7 @@
 package com.example.reweave.Model;
 
 import io.realm.RealmObject;
+import io.realm.annotations.Index;
 import io.realm.annotations.PrimaryKey;
 
 import java.util.UUID;
@@ -26,6 +27,12 @@ public class Donasi extends RealmObject {
     private String target;
     private String photoUri;
     private boolean permission;
+    @Index
+    private int point;
+    @Index
+    private String komunitas;
+
+
 
     public Donasi() {}
 
@@ -79,4 +86,11 @@ public class Donasi extends RealmObject {
 
     public boolean isPermission() { return permission; }
     public void setPermission(boolean permission) { this.permission = permission; }
+
+    public int getPoint() { return point; }
+    public void setPoint(int point) { this.point = point; }
+
+    public String getKomunitas() { return komunitas; }
+    public void setKomunitas(String komunitas) { this.komunitas = komunitas; }
+
 }

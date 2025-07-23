@@ -1,6 +1,7 @@
 package com.example.reweave;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,21 +28,21 @@ public class RiwayatDonasiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riwayat_donasi);
 
-        // Init Realm
         Realm.init(this);
         realm = Realm.getDefaultInstance();
 
-        // Init RecyclerView
+        ImageView backButton = findViewById(R.id.iv_back);
+        backButton.setOnClickListener(v -> onBackPressed());
+
         recyclerView = findViewById(R.id.recycler_riwayat);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Ambil data dari Realm
         RealmResults<Donasi> donasiList = realm.where(Donasi.class).findAll();
 
-        // Pasang ke adapter
         adapter = new RiwayatDonasiAdapter(donasiList);
         recyclerView.setAdapter(adapter);
     }
+
 
     @Override
     protected void onDestroy() {

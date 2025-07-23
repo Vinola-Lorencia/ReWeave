@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,12 +17,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reweave.Model.Donasi;
-import com.example.reweave.Model.PoinNotification;
 import com.example.reweave.Model.Point;
 import com.google.android.material.textfield.TextInputEditText;
 
-import io.realm.Realm;
+import java.util.UUID;
 
+import io.realm.Realm;
 
 public class DonationActivity extends AppCompatActivity {
 
@@ -95,7 +94,7 @@ public class DonationActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
             selectedImageUri = data.getData();
-            dragDropArea.setText("File dipilih: " + selectedImageUri.getLastPathSegment());
+            dragDropArea.setText("Selected: " + selectedImageUri.getLastPathSegment());
             imagePreview.setImageURI(selectedImageUri);
         }
     }
@@ -106,29 +105,29 @@ public class DonationActivity extends AppCompatActivity {
 
     private void setupSubmitButton() {
         submitButton.setOnClickListener(view -> {
-            // Validasi wajib isi (tanpa validasi foto)
             if (isEmpty(inputFirst) || isEmpty(inputLast) || isEmpty(inputEmail) || isEmpty(inputPhone) ||
                     isEmpty(inputType) || isEmpty(inputColor) || isEmpty(inputSize) || isEmpty(inputCall) ||
                     donationTargetSpinner.getSelectedItem() == null) {
-
-                Toast.makeText(this, "Semua kolom wajib diisi!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "All fields must be filled!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             String email = inputEmail.getText().toString().trim();
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                Toast.makeText(this, "Format email tidak valid!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Invalid email format!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             String phone = inputPhone.getText().toString().trim();
             if (phone.length() < 10) {
-                Toast.makeText(this, "Nomor telepon terlalu pendek!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Phone number too short!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
+            String komunitasTerpilih = donationTargetSpinner.getSelectedItem().toString();
+
             realm.executeTransaction(r -> {
-                Donasi donasi = r.createObject(Donasi.class, java.util.UUID.randomUUID().toString());
+                Donasi donasi = r.createObject(Donasi.class, UUID.randomUUID().toString());
                 donasi.setFirstName(inputFirst.getText().toString());
                 donasi.setLastName(inputLast.getText().toString());
                 donasi.setEmail(email);
@@ -138,23 +137,24 @@ public class DonationActivity extends AppCompatActivity {
                 donasi.setSize(inputSize.getText().toString());
                 donasi.setCallTime(inputCall.getText().toString());
                 donasi.setInfo(inputInfo.getText().toString());
-                donasi.setTarget(donationTargetSpinner.getSelectedItem().toString());
+                donasi.setTarget(komunitasTerpilih); // optional
                 donasi.setPermission(permissionContact.isChecked());
+                donasi.setKomunitas(komunitasTerpilih); // wajib untuk tampil
+                donasi.setPoint(100); // tambahkan 100 poin
 
                 if (selectedImageUri != null) {
                     donasi.setPhotoUri(selectedImageUri.toString());
                 } else {
-                    donasi.setPhotoUri(""); // Kosong kalau tidak upload foto
+                    donasi.setPhotoUri("");
                 }
             });
 
             tambahPoinDonasi(100);
-            Toast.makeText(this, " Donation has been sent. Congratulations, you got 100 points !", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "Donation submitted! +100 points added", Toast.LENGTH_SHORT).show();
             finish();
         });
     }
-
-
 
     private void tambahPoinDonasi(int poin) {
         SharedPreferences preferences = getSharedPreferences("user_session", Context.MODE_PRIVATE);
@@ -170,19 +170,9 @@ public class DonationActivity extends AppCompatActivity {
                     newPoint.setEmail(email);
                     newPoint.setPoints(poin);
                 }
-
-                // Tambah notifikasi
-                PoinNotification notif = r.createObject(PoinNotification.class, java.util.UUID.randomUUID().toString());
-                notif.setEmail(email);
-                notif.setPromoTitle("Donation");
-                notif.setPointsRedeemed(poin);
-                notif.setDate(new java.util.Date());
-                notif.setAlamat("Thank you for donating!");
-                notif.setAddition(true); // Ini karena nambah poin
             });
         }
     }
-
 
     @Override
     protected void onDestroy() {

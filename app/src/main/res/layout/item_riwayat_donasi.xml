@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginBottom="8dp"
-    android:background="@android:color/white"
-    android:elevation="2dp">
+    android:layout_height="match_parent"
+    android:paddingTop="15dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="15dp">
 
-    <TextView
-        android:id="@+id/tv_barang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama Barang"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black" />
+    <ImageView
+        android:id="@+id/imvNotif"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_history"/>
 
-    <TextView
-        android:id="@+id/tv_tanggal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tanggal Donasi"
-        android:textColor="#444"
-        android:layout_marginTop="4dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status"
-        android:textColor="#2E7D32"
-        android:layout_marginTop="4dp" />
+        <TextView
+            android:id="@+id/namaKomunitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratboldc"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tv_point"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+ 100 Poin"
-        android:textColor="#444"
-        android:layout_marginTop="4dp" />
+        <TextView
+            android:id="@+id/tambahPoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="TextView" />
+    </LinearLayout>
+
 </LinearLayout>
