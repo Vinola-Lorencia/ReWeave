@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.recyclerview:recyclerview:1.3.1") // tambah ini
     implementation ("com.google.android.gms:play-services-location:21.0.1")
     implementation ("com.google.android.material:material:1.12.0")
     implementation ("io.realm:realm-android-library:10.19.0")
