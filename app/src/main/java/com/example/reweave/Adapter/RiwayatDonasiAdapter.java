@@ -35,7 +35,7 @@ public class RiwayatDonasiAdapter extends RecyclerView.Adapter<RiwayatDonasiAdap
 
         holder.tvBarang.setText(donasi.getBrand());
         holder.tvTanggal.setText(donasi.getCallTime()); // atau bisa nanti pakai date
-        holder.tvStatus.setText("Dikirim"); // kamu bisa nanti pakai field status kalau ditambahkan
+        holder.tvStatus.setText("Congratulations, "); // kamu bisa nanti pakai field status kalau ditambahkan
         holder.tvPoint.setText("+ 100 Poin"); // ini juga bisa pakai field poin kalau mau dinamis
     }
 
