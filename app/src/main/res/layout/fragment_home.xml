@@ -202,9 +202,7 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -243,7 +241,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="385dp"
-            android:layout_height="100dp"
+            android:layout_height="115dp"
             android:layout_marginLeft="5dp"
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="#FFFEFE"
@@ -252,7 +250,7 @@
 
             <LinearLayout
                 android:layout_width="368dp"
-                android:layout_height="97dp"
+                android:layout_height="105dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -276,6 +274,7 @@
                         android:fontFamily="@font/montserratboldc"
                         android:text="Love Earth Festival"
                         android:textColor="#100000"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -285,7 +284,7 @@
                         android:fontFamily="@font/montserrat"
                         android:text="Love Earth Festival at Kantor Pos Medan is a vibrant event celebrating sustainability, nature, and community through fun and eco-friendly activities."
                         android:textColor="#050000"
-                        android:textSize="9dp" />
+                        android:textSize="11sp" />
 
                     <Button
                         android:id="@+id/button"
@@ -295,14 +294,14 @@
                         android:fontFamily="@font/montserratboldc"
                         android:text="Join Donation"
                         android:textColor="#FFFFFF"
-                        android:textSize="6dp" />
+                        android:textSize="8dp" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="385dp"
-            android:layout_height="100dp"
+            android:layout_height="115dp"
             android:layout_marginLeft="5dp"
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="#FFFEFE"
@@ -311,7 +310,7 @@
 
             <LinearLayout
                 android:layout_width="368dp"
-                android:layout_height="97dp"
+                android:layout_height="105dp"
                 android:backgroundTint="#F3F3F3"
                 android:orientation="horizontal">
 
@@ -336,6 +335,7 @@
                         android:fontFamily="@font/montserratboldc"
                         android:text="Green Revival Fest"
                         android:textColor="#100000"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -345,7 +345,7 @@
                         android:fontFamily="@font/montserrat"
                         android:text="Green Revival Fest at Lapangan Benteng Medan is a lively celebration promoting recycling, sustainability, and creative green living."
                         android:textColor="#050000"
-                        android:textSize="9dp" />
+                        android:textSize="11sp" />
 
                     <Button
                         android:id="@+id/button1"
@@ -355,14 +355,14 @@
                         android:fontFamily="@font/montserratboldc"
                         android:text="Join Donation"
                         android:textColor="#FFFFFF"
-                        android:textSize="6dp" />
+                        android:textSize="8dp" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="385dp"
-            android:layout_height="100dp"
+            android:layout_height="115dp"
             android:layout_marginLeft="5dp"
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="#FFFEFE"
@@ -371,7 +371,7 @@
 
             <LinearLayout
                 android:layout_width="365dp"
-                android:layout_height="match_parent"
+                android:layout_height="105dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -395,6 +395,7 @@
                         android:fontFamily="@font/montserratboldc"
                         android:text="Green Fest"
                         android:textColor="#100000"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -404,7 +405,7 @@
                         android:fontFamily="@font/montserrat"
                         android:text="Green Fest at Lapangan Benteng Medan is a lively celebration promoting recycling, sustainability, and creative green living."
                         android:textColor="#050000"
-                        android:textSize="9dp" />
+                        android:textSize="11sp" />
 
                     <Button
                         android:id="@+id/button2"
@@ -414,7 +415,7 @@
                         android:fontFamily="@font/montserratboldc"
                         android:text="Join Donation"
                         android:textColor="#FFFFFF"
-                        android:textSize="6dp" />
+                        android:textSize="8dp" />
                     />
                 </LinearLayout>
             </LinearLayout>

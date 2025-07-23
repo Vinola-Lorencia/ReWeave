@@ -29,6 +29,7 @@ import com.example.reweave.Model.User;
 import com.example.reweave.NotificationActivity;
 import com.example.reweave.R;
 
+import com.example.reweave.ui.Donate.DonateFragment;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -88,7 +89,7 @@ public class HomesFragment extends Fragment {
 
         // Navigasi tombol
         btnChange.setOnClickListener(v -> startActivity(new Intent(requireContext(), ChangePoinActivity.class)));
-        btnCollect.setOnClickListener(v -> startActivity(new Intent(requireContext(), MainUIActivity.class)));
+        btnCollect.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonateFragment.class)));
         button.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
         button1.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));
         button2.setOnClickListener(v -> startActivity(new Intent(requireContext(), DonationActivity.class)));

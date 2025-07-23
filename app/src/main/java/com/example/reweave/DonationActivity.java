@@ -105,12 +105,12 @@ public class DonationActivity extends AppCompatActivity {
 
     private void setupSubmitButton() {
         submitButton.setOnClickListener(view -> {
-            // Validasi wajib isi
+            // Validasi wajib isi (tanpa validasi foto)
             if (isEmpty(inputFirst) || isEmpty(inputLast) || isEmpty(inputEmail) || isEmpty(inputPhone) ||
                     isEmpty(inputType) || isEmpty(inputColor) || isEmpty(inputSize) || isEmpty(inputCall) ||
-                    donationTargetSpinner.getSelectedItem() == null || selectedImageUri == null) {
+                    donationTargetSpinner.getSelectedItem() == null) {
 
-                Toast.makeText(this, "Semua kolom wajib diisi dan foto harus diunggah!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Semua kolom wajib diisi!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -139,7 +139,12 @@ public class DonationActivity extends AppCompatActivity {
                 donasi.setInfo(inputInfo.getText().toString());
                 donasi.setTarget(donationTargetSpinner.getSelectedItem().toString());
                 donasi.setPermission(permissionContact.isChecked());
-                donasi.setPhotoUri(selectedImageUri.toString());
+
+                if (selectedImageUri != null) {
+                    donasi.setPhotoUri(selectedImageUri.toString());
+                } else {
+                    donasi.setPhotoUri(""); // Kosong kalau tidak upload foto
+                }
             });
 
             tambahPoinDonasi(100);
@@ -147,6 +152,7 @@ public class DonationActivity extends AppCompatActivity {
             finish();
         });
     }
+
 
 
     private void tambahPoinDonasi(int poin) {
