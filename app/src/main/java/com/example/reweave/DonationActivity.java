@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reweave.Model.Donasi;
+import com.example.reweave.Model.PoinNotification;
 import com.example.reweave.Model.Point;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -170,9 +171,19 @@ public class DonationActivity extends AppCompatActivity {
                     newPoint.setEmail(email);
                     newPoint.setPoints(poin);
                 }
+
+                // Tambah notifikasi
+                PoinNotification notif = r.createObject(PoinNotification.class, java.util.UUID.randomUUID().toString());
+                notif.setEmail(email);
+                notif.setPromoTitle("Donation");
+                notif.setPointsRedeemed(poin);
+                notif.setDate(new java.util.Date());
+                notif.setAlamat("Thank you for donating!");
+                notif.setAddition(true); // Ini karena nambah poin
             });
         }
     }
+
 
     @Override
     protected void onDestroy() {

@@ -1,12 +1,11 @@
 # ReWeave
 
 ## Anggota Kelompok
-- **Avelina Garcia Wong** (03081230014)
-- **Charlene Silver** (03081230004)
+- **Avelina Garcia Wong** (03081230014) 
+- **Charlene Silver** (03081230004) 
 - **Marcelyn Wijaya** (03081230017)
-- **Vinola Lorencia** (03081230022)
+- **Vinola Lorencia** (03081230022) 
 
----
 
 ## Apa itu ReWeave?
 
@@ -15,7 +14,7 @@ Melalui ReWeave, pengguna dapat **mendonasikan pakaian bekas** melalui fitur **D
 
 ---
 ## ScreenRecord Aplikasi Reweave
-
+http://tiny.cc/DemoReweave
 
 ## Fitur-fitur pada ReWeave
 
